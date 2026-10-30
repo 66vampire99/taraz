@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0284C7" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>ترازنگار — ژورنال هوشمند دخل و خرج، پس‌انداز و اقساط</title>
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+  <style>
+    :root,
+    [data-skin="aqua-pastel"] {
+      --app-bg: #F7F9FB;
+      --card-surface: #FFFFFF;
+      --card-subtle: #F0F4F8;
+      --text-main: #182630;
+      --text-sub: #64748B;
+      --border-soft: #E2E8F0;
+
+      --hero-balance-bg: linear-gradient(135deg, #67E8F9 0%, #38BDF8 55%, #0284C7 100%);
+      --hero-balance-text: #0F293A;
+      --hero-balance-sub: #164E63;
+
+      --income-card-bg: linear-gradient(160deg, #D1FAE5 0%, #A7F3D0 50%, #6EE7B7 100%);
+      --income-card-text: #064E3B;
+      --income-wave-stroke: #059669;
+      --income-wave-fill: rgba(5, 150, 105, 0.22);
+
+      --expense-card-bg: linear-gradient(160deg, #FFE4E6 0%, #FECDD3 50%, #FDA4AF 100%);
+      --expense-card-text: #881337;
+      --expense-wave-stroke: #E11D48;
+      --expense-wave-fill: rgba(225, 29, 72, 0.20);
+
+      --btn-pay-bg: #86EFAC;
+      --btn-pay-text: #064E3B;
+      --btn-del-bg: #FCA5A5;
+      --btn-del-text: #7F1D1D;
+      --btn-primary-bg: #6366F1;
+      --btn-primary-text: #FFFFFF;
+
+      --nav-bg: #FFFFFF;
+      --nav-active-pill: #E0F2FE;
+      --nav-active-text: #0284C7;
+      --sms-bubble-1: #E5E7EB;
+      --sms-bubble-2: #EDE9FE;
+    }
+
+    [data-skin="warm-olive"] {
+      --app-bg: #F6F2EA;
+      --card-surface: #FFFFFF;
+      --card-subtle: #EDE6D8;
+      --text-main: #232B28;
+      --text-sub: #6E6A61;
+      --border-soft: #E0D7C6;
+
+      --hero-balance-bg: linear-gradient(135deg, #E2D9C5 0%, #D4C8B0 100%);
+      --hero-balance-text: #1F2924;
+      --hero-balance-sub: #4B534D;
+
+      --income-card-bg: linear-gradient(160deg, #8A9A6E 0%, #738458 100%);
+      --income-card-text: #FFFFFF;
+      --income-wave-stroke: #FFFFFF;
+      --income-wave-fill: rgba(255, 255, 255, 0.22);
+
+      --expense-card-bg: linear-gradient(160deg, #C47457 0%, #B05B3E 100%);
+      --expense-card-text: #FFFFFF;
+      --expense-wave-stroke: #FFFFFF;
+      --expense-wave-fill: rgba(255, 255, 255, 0.22);
+
+      --btn-pay-bg: #849669;
+      --btn-pay-text: #FFFFFF;
+      --btn-del-bg: #B86B52;
+      --btn-del-text: #FFFFFF;
+      --btn-primary-bg: #1D3542;
+      --btn-primary-text: #FFFFFF;
+
+      --nav-bg: #EFEAE0;
+      --nav-active-pill: #DDD3C0;
+      --nav-active-text: #1F2924;
+      --sms-bubble-1: #C2C5C8;
+      --sms-bubble-2: #E4D8C4;
+    }
+
+    [data-skin="vivid-glass"] {
+      --app-bg: #F0F4F9;
+      --card-surface: #FFFFFF;
+      --card-subtle: #E4EBF5;
+      --text-main: #0F172A;
+      --text-sub: #475569;
+      --border-soft: #CBD5E1;
+
+      --hero-balance-bg: linear-gradient(135deg, #1E6B7B 0%, #2A9D8F 45%, #3B4371 100%);
+      --hero-balance-text: #FFFFFF;
+      --hero-balance-sub: #CCFBF1;
+
+      --income-card-bg: linear-gradient(155deg, #10B981 0%, #059669 60%, #047857 100%);
+      --income-card-text: #FFFFFF;
+      --income-wave-stroke: #A7F3D0;
+      --income-wave-fill: rgba(167, 243, 208, 0.28);
+
+      --expense-card-bg: linear-gradient(155deg, #F43F5E 0%, #E11D48 60%, #BE123C 100%);
+      --expense-card-text: #FFFFFF;
+      --expense-wave-stroke: #FECDD3;
+      --expense-wave-fill: rgba(254, 205, 211, 0.28);
+
+      --btn-pay-bg: #10B981;
+      --btn-pay-text: #FFFFFF;
+      --btn-del-bg: #F43F5E;
+      --btn-del-text: #FFFFFF;
+      --btn-primary-bg: #7C3AED;
+      --btn-primary-text: #FFFFFF;
+
+      --nav-bg: #FFFFFF;
+      --nav-active-pill: #EDE9FE;
+      --nav-active-text: #6D28D9;
+      --sms-bubble-1: #E2E8F0;
+      --sms-bubble-2: #DDD6FE;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background: var(--app-bg);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      max-width: 540px;
+      margin: 0 auto;
+      position: relative;
+      padding-bottom: 76px;
+    }
+
+    .locked-notif-strip {
+      margin: 10px 16px 0;
+      background: #232A34;
+      color: #FFF;
+      border-radius: 18px;
+      padding: 10px 12px;
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+    .locked-notif-strip.active { display: flex; }
+
+    .notif-banner-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.07);
+      border-right: 4px solid #F59E0B;
+      border-radius: 12px;
+      padding: 8px 10px;
+    }
+    .notif-banner-item.urgent-1day {
+      background: rgba(239, 68, 68, 0.18);
+      border: 1px solid rgba(248, 113, 113, 0.5);
+      border-right: 4px solid #EF4444;
+    }
+
+    @keyframes shakeAnim {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-7px); }
+      40% { transform: translateX(7px); }
+      60% { transform: translateX(-5px); }
+      80% { transform: translateX(5px); }
+    }
+    .shake { animation: shakeAnim 0.35s ease; }
+
+    .top-greeting-bar {
+      padding: 14px 18px 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .profile-greet { display: flex; align-items: center; gap: 10px; }
+    .avatar-circle {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, #0284C7, #38BDF8);
+      color: #FFF; display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 16px; border: 2px solid #FFF;
+    }
+    .greet-text h1 { font-size: 16px; font-weight: 900; color: var(--text-main); }
+    .greet-text p { font-size: 11px; color: var(--text-sub); font-weight: 600; }
+
+    .top-icon-actions { display: flex; align-items: center; gap: 8px; }
+    .icon-circle-btn {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--card-surface); border: 1px solid var(--border-soft);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 15px; position: relative;
+    }
+    .bell-dot {
+      position: absolute; top: 4px; right: 4px;
+      width: 9px; height: 9px; border-radius: 50%;
+      background: #EF4444; border: 1.5px solid #FFF;
+    }
+
+    .skin-switcher-row { padding: 0 18px 10px; display: flex; gap: 6px; }
+    .skin-chip {
+      flex: 1; padding: 6px 4px; border-radius: 20px;
+      border: 1.5px solid var(--border-soft); background: var(--card-surface);
+      color: var(--text-sub); font-size: 10.5px; font-weight: 800;
+      text-align: center; cursor: pointer;
+    }
+    .skin-chip.active {
+      background: var(--btn-primary-bg); color: var(--btn-primary-text);
+      border-color: var(--btn-primary-bg);
+    }
+
+    .phone-content { flex: 1; padding: 4px 18px 18px; }
+    .screen-view { display: none; }
+    .screen-view.active { display: block; }
+
+    .hero-balance-card {
+      background: var(--hero-balance-bg); color: var(--hero-balance-text);
+      border-radius: 26px; padding: 18px;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; box-shadow: 0 14px 30px -8px rgba(0, 0, 0, 0.14);
+      margin-bottom: 14px; position: relative; overflow: hidden;
+    }
+    .hero-balance-info { flex: 1; z-index: 2; }
+    .hero-balance-info .lbl { font-size: 12px; font-weight: 800; color: var(--hero-balance-sub); }
+    .hero-balance-info .main-val { font-size: 22px; font-weight: 900; margin: 2px 0 8px; }
+    .hero-mini-stats { display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 10.5px; font-weight: 800; color: var(--hero-balance-sub); }
+    .hero-donut-wrap { width: 106px; height: 106px; position: relative; display: flex; align-items: center; justify-content: center; }
+    .donut-center-tag { position: absolute; text-align: center; font-size: 10px; font-weight: 900; color: var(--hero-balance-text); }
+
+    .dual-wave-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
+    .wave-stat-card {
+      border-radius: 24px; padding: 15px 14px 0; position: relative;
+      overflow: hidden; min-height: 154px; display: flex; flex-direction: column;
+      justify-content: space-between; cursor: pointer;
+      box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.11);
+    }
+    .wave-stat-card.income-wave-card { background: var(--income-card-bg); color: var(--income-card-text); }
+    .wave-stat-card.expense-wave-card { background: var(--expense-card-bg); color: var(--expense-card-text); }
+    .wave-card-top .w-title { font-size: 12px; font-weight: 800; }
+    .wave-card-top .w-amount { font-size: 17px; font-weight: 900; margin-top: 4px; }
+    .wave-card-top .w-unit { font-size: 10px; font-weight: 700; opacity: 0.85; }
+    .wave-svg-holder { margin: 8px -14px 0; height: 64px; position: relative; }
+    .wave-svg-holder svg { width: 100%; height: 100%; display: block; }
+    .wave-pill-tag {
+      position: absolute; bottom: 8px; left: 10px; font-size: 9.5px; font-weight: 800;
+      padding: 2px 8px; border-radius: 10px; background: rgba(255, 255, 255, 0.35);
+    }
+
+    .section-head-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .section-head-row h2 { font-size: 15px; font-weight: 900; }
+
+    .filter-pills-scroll { display: flex; gap: 7px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 10px; }
+    .filter-pill {
+      padding: 6px 14px; border-radius: 20px; background: var(--card-surface);
+      border: 1.5px solid var(--border-soft); font-size: 11.5px; font-weight: 800;
+      color: var(--text-sub); white-space: nowrap; cursor: pointer;
+    }
+    .filter-pill.active { background: var(--btn-primary-bg); color: var(--btn-primary-text); border-color: var(--btn-primary-bg); }
+
+    .clean-tx-card {
+      background: var(--card-surface); border: 1px solid var(--border-soft);
+      border-radius: 20px; padding: 12px 14px; margin-bottom: 10px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .tx-right-group { display: flex; align-items: center; gap: 12px; }
+    .tx-pastel-icon { width: 46px; height: 46px; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 21px; }
+    .tx-info h4 { font-size: 13.5px; font-weight: 900; }
+    .tx-info p { font-size: 11px; color: var(--text-sub); margin-top: 2px; }
+    .tx-left-group { text-align: left; }
+    .tx-left-group .price { font-size: 14px; font-weight: 900; display: block; }
+    .status-chip { display: inline-block; margin-top: 4px; padding: 2px 9px; border-radius: 10px; font-size: 10px; font-weight: 800; }
+    .status-chip.green { background: #D1FAE5; color: #065F46; }
+    .status-chip.amber { background: #FEF3C7; color: #92400E; }
+    .status-chip.rose  { background: #FFE4E6; color: #9F1239; }
+
+    .tree-pillar-box {
+      background: var(--card-surface); border: 1.5px solid var(--border-soft);
+      border-radius: 22px; margin-bottom: 12px; overflow: hidden;
+    }
+    .tree-pillar-head { padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+    .tree-pillar-body { display: none; background: var(--card-subtle); padding: 12px; border-top: 1px dashed var(--border-soft); }
+    .tree-pillar-box.open .tree-pillar-body { display: block; }
+
+    .sorted-cat-card { background: var(--card-surface); border: 1px solid var(--border-soft); border-radius: 16px; margin-bottom: 8px; overflow: hidden; }
+    .sorted-cat-head { padding: 11px 13px; cursor: pointer; position: relative; }
+    .sorted-cat-bar { position: absolute; top: 0; right: 0; bottom: 0; opacity: 0.12; pointer-events: none; }
+    .sorted-cat-micro { display: none; background: var(--app-bg); padding: 10px; border-top: 1px dashed var(--border-soft); }
+    .sorted-cat-card.open .sorted-cat-micro { display: block; }
+
+    .inst-pill-card {
+      background: var(--card-surface); border: 1px solid var(--border-soft);
+      border-radius: 24px; padding: 16px; margin-bottom: 12px; text-align: center;
+    }
+    .inst-pill-card.locked-border { border: 2px solid #EF4444; }
+    .inst-pill-card h3 { font-size: 15px; font-weight: 900; margin-bottom: 4px; }
+    .inst-pill-card p { font-size: 11.5px; color: var(--text-sub); margin-bottom: 12px; }
+    .inst-dual-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .pill-action-btn { padding: 10px 12px; border-radius: 24px; border: none; font-size: 12.5px; font-weight: 900; cursor: pointer; }
+    .pill-pay { background: var(--btn-pay-bg); color: var(--btn-pay-text); }
+    .pill-del { background: var(--btn-del-bg); color: var(--btn-del-text); }
+
+    .send-sms-pill-btn {
+      width: 100%; padding: 13px; border-radius: 26px; border: none;
+      background: var(--btn-primary-bg); color: var(--btn-primary-text);
+      font-size: 13.5px; font-weight: 900; cursor: pointer; margin-top: 6px;
+    }
+
+    .bottom-nav-bar {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      max-width: 540px; margin: 0 auto;
+      background: var(--nav-bg); border-top: 1px solid var(--border-soft);
+      padding: 8px 12px 12px; display: flex; justify-content: space-around; align-items: center;
+      z-index: 40;
+    }
+    .b-nav-item {
+      background: transparent; border: none; display: flex; flex-direction: column;
+      align-items: center; gap: 3px; cursor: pointer; color: var(--text-sub);
+      font-size: 10.5px; font-weight: 800; padding: 6px 12px; border-radius: 18px;
+    }
+    .b-nav-item .nav-ico { font-size: 18px; }
+    .b-nav-item.active { background: var(--nav-active-pill); color: var(--nav-active-text); }
+
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(5px); z-index: 60; display: none;
+      align-items: center; justify-content: center; padding: 16px;
+    }
+    .modal-backdrop.active { display: flex; }
+    .modal-sheet {
+      background: var(--app-bg); border: 1.5px solid var(--border-soft);
+      border-radius: 28px; width: 100%; max-width: 440px; max-height: 90vh;
+      overflow-y: auto; padding: 18px;
+    }
+    .input-clean {
+      width: 100%; padding: 10px 13px; border-radius: 14px;
+      border: 1.5px solid var(--border-soft); background: var(--card-surface);
+      font-size: 12.5px; font-weight: 700; color: var(--text-main); outline: none; margin-top: 4px;
+    }
+  </style>
+</head>
+<body data-skin="aqua-pastel">
+
+  <div id="lockedNotifStrip" class="locked-notif-strip">
+    <div id="notifBannerList"></div>
+    <div id="lockedToastMsg" style="display:none; background:#FEE2E2; color:#991B1B; padding:6px 10px; border-radius:10px; font-size:10.5px; font-weight:800; text-align:center;">
+      🔒 این اعلان قفل است! چون ۱ روز تا سررسید قسط مانده، پاک نمی‌شود. روی «پرداخت کردم» بزنید تا حذف شود.
+    </div>
+  </div>
+
+  <header class="top-greeting-bar">
+    <div class="profile-greet">
+      <div class="avatar-circle">ت</div>
+      <div class="greet-text">
+        <h1>سلام، روز بخیر! 👋</h1>
+        <p>ژورنال هوشمند دخل، خرج و اقساط</p>
+      </div>
+    </div>
+    <div class="top-icon-actions">
+      <button class="icon-circle-btn" onclick="switchScreen('manual', document.getElementById('nav-manual'))">＋</button>
+      <button class="icon-circle-btn" onclick="switchScreen('installments', document.getElementById('nav-inst'))">
+        🔔
+        <span id="bellDot" class="bell-dot"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="skin-switcher-row">
+    <button class="skin-chip active" id="skinBtn-aqua-pastel" onclick="setSkin('aqua-pastel', this)">🎨 ۱. آکوا پاستل</button>
+    <button class="skin-chip" id="skinBtn-warm-olive" onclick="setSkin('warm-olive', this)">🌿 ۲. کرم و زیتونی</button>
+    <button class="skin-chip" id="skinBtn-vivid-glass" onclick="setSkin('vivid-glass', this)">✨ ۳. گرادیان براق</button>
+  </div>
+
+  <div class="phone-content">
+
+    <!-- SCREEN 1: DASHBOARD -->
+    <section id="screen-dashboard" class="screen-view active">
+      <div class="hero-balance-card">
+        <div class="hero-balance-info">
+          <div class="lbl">تراز کل قابل خرج:</div>
+          <div class="main-val" id="heroBalanceVal">۰ تومان</div>
+          <div class="hero-mini-stats">
+            <span>🟢 ورودی: <b id="heroIncMini">۰</b></span>
+            <span>🔴 مخارج: <b id="heroExpMini">۰</b></span>
+            <span>🔐 پس‌انداز: <b id="heroSavMini">۰</b></span>
+          </div>
+        </div>
+        <div class="hero-donut-wrap">
+          <svg id="heroDonutSvg" width="106" height="106" viewBox="0 0 110 110"></svg>
+          <div class="donut-center-tag">
+            <span>پس‌انداز</span>
+            <div id="donutSavePct" style="font-size:13px;">۰٪</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dual-wave-grid">
+        <div class="wave-stat-card income-wave-card" onclick="openTreeOnPillar('income')">
+          <div class="wave-card-top">
+            <div class="w-title">درآمدها و ورودی‌ها</div>
+            <div class="w-amount" id="waveIncomeVal">۰</div>
+            <div class="w-unit">تومان (کلیک = ریز دسته‌ها)</div>
+          </div>
+          <div class="wave-svg-holder">
+            <svg viewBox="0 0 200 65" preserveAspectRatio="none">
+              <path d="M0,52 C25,48 40,28 65,36 C90,44 110,16 135,24 C160,32 175,8 200,14 L200,65 L0,65 Z" fill="var(--income-wave-fill)"></path>
+              <path d="M0,52 C25,48 40,28 65,36 C90,44 110,16 135,24 C160,32 175,8 200,14" fill="none" stroke="var(--income-wave-stroke)" stroke-width="3" stroke-linecap="round"></path>
+            </svg>
+            <span class="wave-pill-tag">افزایشی ↗</span>
+          </div>
+        </div>
+
+        <div class="wave-stat-card expense-wave-card" onclick="openTreeOnPillar('expense')">
+          <div class="wave-card-top">
+            <div class="w-title">هزینه‌ها و مخارج</div>
+            <div class="w-amount" id="waveExpenseVal">۰</div>
+            <div class="w-unit">تومان (کلیک = ریز دسته‌ها)</div>
+          </div>
+          <div class="wave-svg-holder">
+            <svg viewBox="0 0 200 65" preserveAspectRatio="none">
+              <path d="M0,45 C30,52 50,20 75,35 C100,50 125,10 150,28 C175,45 185,22 200,30 L200,65 L0,65 Z" fill="var(--expense-wave-fill)"></path>
+              <path d="M0,45 C30,52 50,20 75,35 C100,50 125,10 150,28 C175,45 185,22 200,30" fill="none" stroke="var(--expense-wave-stroke)" stroke-width="3" stroke-linecap="round"></path>
+            </svg>
+            <span class="wave-pill-tag">کاهشی ↘</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-head-row">
+        <h2>تراکنش‌های اخیر و دسته‌ها</h2>
+        <span style="font-size:11px; font-weight:800; color:var(--nav-active-text); cursor:pointer;" onclick="switchScreen('tree', document.getElementById('nav-tree'))">
+          نمایش درختی (بیشترین به کمترین) ←
+        </span>
+      </div>
+
+      <div class="filter-pills-scroll" id="dashboardFilterPills"></div>
+      <div id="recentTransactionsList"></div>
+    </section>
+
+    <!-- SCREEN 2: 3-LEVEL TREE -->
+    <section id="screen-tree" class="screen-view">
+      <div class="section-head-row">
+        <h2>درخت دسته‌بندی‌ها (از بیشترین به کمترین)</h2>
+        <button class="filter-pill active" style="padding:4px 10px; font-size:10.5px;" onclick="switchScreen('settings', document.getElementById('nav-settings'))">
+          + دسته جدید
+        </button>
+      </div>
+      <div id="hierarchicalTreeMount"></div>
+    </section>
+
+    <!-- SCREEN 3: INSTALLMENTS & SMS -->
+    <section id="screen-installments" class="screen-view">
+      <div class="section-head-row">
+        <h2>اقساط ماهیانه و یادآورها</h2>
+        <button class="filter-pill active" style="padding:4px 10px; font-size:10.5px;" onclick="toggleAddInstallmentBox()">
+          + ثبت قسط جدید
+        </button>
+      </div>
+
+      <div id="addInstallmentBox" style="display:none; background:var(--card-surface); border:1.5px solid var(--border-soft); border-radius:22px; padding:14px; margin-bottom:14px;">
+        <h4 style="font-size:13px; font-weight:900; margin-bottom:8px;">افزودن قسط ماهیانه جدید</h4>
+        <input type="text" id="newInstTitle" class="input-clean" placeholder="عنوان قسط (مثلاً: وام قرض‌الحسنه مهر ایران)" />
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:6px;">
+          <input type="number" id="newInstAmount" class="input-clean" placeholder="مبلغ (تومان) مثلاً 3400000" />
+          <input type="text" id="newInstBank" class="input-clean" placeholder="نام بانک" />
+        </div>
+        <div style="margin-top:6px;">
+          <select id="newInstDaysLeft" class="input-clean">
+            <option value="1">🚨 ۱ روز مانده به موعد (اعلان قفل‌شونده و پاک‌نشدنی)</option>
+            <option value="6">⚠️ ۶ روز مانده به موعد (یادآوری یک هفته قبل)</option>
+            <option value="18">🗓️ ۱۸ روز مانده به موعد</option>
+          </select>
+        </div>
+        <button class="send-sms-pill-btn" style="margin-top:10px; padding:10px;" onclick="saveNewInstallment()">
+          ثبت قسط و فعال‌سازی اعلان
+        </button>
+      </div>
+
+      <div id="installmentCardsMount"></div>
+
+      <div class="section-head-row" style="margin-top:18px;">
+        <h2>ثبت از روی متن پیامک بانکی</h2>
+      </div>
+      <textarea id="customSmsTextarea" rows="3" class="input-clean" placeholder="متن پیامک بانک را اینجا الصاق کنید یا منتظر دریافت خودکار پیامک باشید..."></textarea>
+      <button class="send-sms-pill-btn" onclick="triggerCustomSmsFromInput()">
+        پردازش پیامک و باز کردن پنجره ثبت
+      </button>
+    </section>
+
+    <!-- SCREEN 4: MANUAL ENTRY & SAVINGS -->
+    <section id="screen-manual" class="screen-view">
+      <div class="section-head-row">
+        <h2>ثبت دستی تراکنش و پس‌انداز</h2>
+      </div>
+
+      <div style="background:var(--card-surface); border:1px solid var(--border-soft); border-radius:24px; padding:16px; margin-bottom:14px;">
+        <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-bottom:12px;">
+          <button class="filter-pill active" id="mBtn-expense" onclick="setManualPillar('expense')">🔴 هزینه</button>
+          <button class="filter-pill" id="mBtn-income" onclick="setManualPillar('income')">🟢 درآمد</button>
+          <button class="filter-pill" id="mBtn-saving" onclick="setManualPillar('saving')">🔐 پس‌انداز</button>
+          <button class="filter-pill" id="mBtn-transfer" onclick="setManualPillar('transfer')">🔄 انتقال خودی</button>
+        </div>
+
+        <label style="font-size:11px; font-weight:800;">مبلغ تراکنش (تومان):</label>
+        <input type="number" id="mAmountInput" class="input-clean" placeholder="مثلاً 850000" />
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px;">
+          <label style="font-size:11px; font-weight:800;">دسته‌بندی:</label>
+          <span style="font-size:10.5px; font-weight:800; color:var(--nav-active-text); cursor:pointer;" onclick="switchScreen('settings', document.getElementById('nav-settings'))">+ ساخت دسته جدید</span>
+        </div>
+        <select id="mCategorySelect" class="input-clean"></select>
+
+        <label style="font-size:11px; font-weight:800; display:block; margin-top:10px;">عنوان و توضیح ریز:</label>
+        <input type="text" id="mTitleInput" class="input-clean" placeholder="مثلاً: خرید پروتئین و لبنیات" />
+
+        <button class="send-sms-pill-btn" style="margin-top:14px;" onclick="submitManualTx()">
+          ثبت در برنامه
+        </button>
+      </div>
+
+      <div style="background:var(--card-surface); border:1.5px solid var(--border-soft); border-radius:24px; padding:16px;">
+        <h3 style="font-size:14px; font-weight:900; margin-bottom:4px;">🏺 قانون پس‌انداز اجباری ماهانه</h3>
+        <p style="font-size:11px; color:var(--text-sub); margin-bottom:10px;">
+          حتی در شرایط سخت مالی، پس‌انداز ماهانه صفر نمی‌شود:
+        </p>
+        <div style="display:flex; gap:6px;">
+          <button class="filter-pill active" id="sMode-15" style="flex:1;" onclick="setSavingRate(15, this)">عادی (۱۵٪)</button>
+          <button class="filter-pill" id="sMode-5" style="flex:1;" onclick="setSavingRate(5, this)">تحت فشار (۵٪)</button>
+          <button class="filter-pill" id="sMode-2" style="flex:1;" onclick="setSavingRate(2, this)">شرایط سخت (۲٪)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 5: SETTINGS & CUSTOM CATEGORIES -->
+    <section id="screen-settings" class="screen-view">
+      <div class="section-head-row">
+        <h2>تعریف دسته‌بندی‌ها، سرشماره‌ها و مدیریت داده‌ها</h2>
+      </div>
+
+      <div style="background:var(--card-surface); border:1px solid var(--border-soft); border-radius:24px; padding:16px; margin-bottom:14px;">
+        <h4 style="font-size:13px; font-weight:900; margin-bottom:8px;">🏷️ افزودن دسته‌بندی شخصی</h4>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <select id="setCatPillar" class="input-clean" onchange="renderSettingsCategories()">
+            <option value="expense">🔴 هزینه‌ها</option>
+            <option value="income">🟢 درآمدها</option>
+            <option value="saving">🔐 پس‌انداز</option>
+            <option value="transfer">🔄 انتقال خودی</option>
+          </select>
+          <select id="setCatEmoji" class="input-clean">
+            <option value="🏠">🏠 مسکن</option>
+            <option value="🛒">🛒 خوراکی</option>
+            <option value="🚗">🚗 خودرو</option>
+            <option value="📅">📅 اقساط</option>
+            <option value="🏋️">🏋️ ورزش و سلامت</option>
+            <option value="🎓">🎓 آموزش</option>
+            <option value="🛠️">🛠️ تعمیرات</option>
+            <option value="🎁">🎁 هدیه</option>
+          </select>
+        </div>
+        <div style="display:flex; gap:8px; margin-top:8px;">
+          <input type="text" id="setNewCatName" class="input-clean" placeholder="نام دسته جدید..." style="margin-top:0;" />
+          <button class="pill-action-btn pill-pay" style="white-space:nowrap;" onclick="addCustomCategory()">+ افزودن</button>
+        </div>
+
+        <div id="settingsCatList" style="display:flex; flex-wrap:wrap; gap:6px; margin-top:12px;"></div>
+      </div>
+
+      <div style="background:var(--card-surface); border:1px solid var(--border-soft); border-radius:24px; padding:16px; margin-bottom:14px;">
+        <h4 style="font-size:13px; font-weight:900; margin-bottom:6px;">🧹 شروع از صفر (پاک کردن داده‌های نمونه)</h4>
+        <p style="font-size:11px; color:var(--text-sub); margin-bottom:10px;">
+          برای شروع ثبت اطلاعات واقعی خودتان (یا هنگام دادن برنامه به فرد دیگر)، می‌توانید تراکنش‌های پیش‌فرض را پاک کنید:
+        </p>
+        <button class="pill-action-btn pill-del" style="width:100%;" onclick="clearAllDemoData()">
+          پاک کردن تراکنش‌های نمونه و شروع از صفر
+        </button>
+      </div>
+    </section>
+
+  </div>
+
+  <nav class="bottom-nav-bar">
+    <button class="b-nav-item active" id="nav-dash" onclick="switchScreen('dashboard', this)">
+      <span class="nav-ico">⊞</span>
+      <span>داشبورد</span>
+    </button>
+    <button class="b-nav-item" id="nav-tree" onclick="switchScreen('tree', this)">
+      <span class="nav-ico">🗂️</span>
+      <span>درخت دسته‌ها</span>
+    </button>
+    <button class="b-nav-item" id="nav-inst" onclick="switchScreen('installments', this)">
+      <span class="nav-ico">💬</span>
+      <span>پیامک و اقساط</span>
+    </button>
+    <button class="b-nav-item" id="nav-manual" onclick="switchScreen('manual', this)">
+      <span class="nav-ico">＋</span>
+      <span>ثبت و پس‌انداز</span>
+    </button>
+    <button class="b-nav-item" id="nav-settings" onclick="switchScreen('settings', this)">
+      <span class="nav-ico">⚙️</span>
+      <span>تنظیمات</span>
+    </button>
+  </nav>
+
+  <!-- FLOATING POPUP WHEN BANK SMS ARRIVES -->
+  <div id="smsPopupModal" class="modal-backdrop">
+    <div class="modal-sheet">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <strong style="font-size:14px;">⚡ ثبت خودکار پیامک بانکی</strong>
+        <span id="modalTypeBadge" class="status-chip rose">برداشت</span>
+      </div>
+
+      <div style="background:var(--card-surface); border:1px solid var(--border-soft); border-radius:18px; padding:12px; text-align:center; margin-bottom:10px;">
+        <div style="font-size:11px; color:var(--text-sub);" id="modalBankTitle">بانک</div>
+        <div style="font-size:21px; font-weight:900; margin:3px 0;" id="modalAmountVal">۰ تومان</div>
+        <label style="display:flex; align-items:center; justify-content:center; gap:6px; font-size:11px; font-weight:800; color:#059669; margin-top:6px; cursor:pointer;">
+          <input type="checkbox" id="modalAutoSaveCheck" checked />
+          <span id="modalAutoSaveText">انتقال خودکار به پس‌انداز</span>
+        </label>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+        <span style="font-size:11.5px; font-weight:800;">انتخاب دسته‌بندی:</span>
+        <span style="font-size:10.5px; font-weight:800; color:var(--nav-active-text); cursor:pointer;" onclick="promptNewCategoryInline()">+ دسته جدید</span>
+      </div>
+      <div id="modalCategoryPills" style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;"></div>
+
+      <input type="text" id="modalNoteInput" class="input-clean" placeholder="عنوان تراکنش (مثلاً: خرید سوپرمارکت، قسط...)" />
+
+      <div class="inst-dual-buttons" style="margin-top:12px;">
+        <button class="pill-action-btn pill-pay" onclick="confirmSmsModal()">ثبت تراکنش</button>
+        <button class="pill-action-btn pill-del" onclick="closeSmsModal()">بستن</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+  const DEFAULT_CATEGORIES = {
+    expense: ['🏠 مسکن، اجاره و قبوض', '📅 پرداخت شارژ و اقساط ماهانه', '🛒 خوراکی و سوپرمارکت', '🚗 خودرو و سوخت', '🏥 سلامت و ورزش'],
+    income: ['💼 حقوق و دستمزد اصلی', '📈 پروژه و درآمد جانبی', '🎁 سود و پاداش'],
+    saving: ['🔐 پس‌انداز تعهدی ماهانه', '🪙 قلک خرده‌پول‌ها'],
+    transfer: ['🔄 کارت به کارت بین حساب‌های خودم']
+  };
+
+  const DEFAULT_TX = [
+    { id: 1, pillar: 'income', category: '💼 حقوق و دستمزد اصلی', title: 'واریز حقوق و مزایای ماهانه', amount: 32000000, bank: 'بانک ملی ایران', date: '۱۴۰۵/۰۸/۰۱', status: 'پرداخت شده', icon: '💼', bg: '#D1FAE5' },
+    { id: 2, pillar: 'income', category: '📈 پروژه و درآمد جانبی', title: 'تسویه حق‌الزحمه پروژه', amount: 7800000, bank: 'بلوبانک سامان', date: '۱۴۰۵/۰۸/۰۳', status: 'پرداخت شده', icon: '📈', bg: '#E0F2FE' },
+    { id: 3, pillar: 'expense', category: '🏠 مسکن، اجاره و قبوض', title: 'مسکن، اجاره و قبوض', amount: 9800000, bank: 'بانک مسکن', date: '۱۴۰۵/۰۸/۰۲', status: 'پرداخت شده', icon: '🏠', bg: '#D1FAE5' },
+    { id: 4, pillar: 'expense', category: '📅 پرداخت شارژ و اقساط ماهانه', title: 'پرداخت شارژ و قبوض ماهانه', amount: 2800000, bank: 'بانک صادرات ایران', date: '۱۴۰۵/۰۸/۰۴', status: 'تراکنش پیامکی', icon: '🧾', bg: '#FEF3C7' },
+    { id: 5, pillar: 'expense', category: '🛒 خوراکی و سوپرمارکت', title: 'خرید پروتئین و مایحتاج ماهانه', amount: 1790000, bank: 'بانک ملت', date: '۱۴۰۵/۰۸/۰۵', status: 'پرداخت شده', icon: '🛒', bg: '#FFE4E6' },
+    { id: 6, pillar: 'saving', category: '🔐 پس‌انداز تعهدی ماهانه', title: 'کسر خودکار پس‌انداز اول ماه', amount: 7650000, bank: 'گاوصندوق تعهد', date: '۱۴۰۵/۰۸/۰۱', status: 'قفل شده', icon: '🔐', bg: '#EDE9FE' }
+  ];
+
+  const DEFAULT_INST = [
+    {
+      id: 501,
+      title: 'موعد فردا: وام قرض‌الحسنه',
+      subtitle: 'مبلغ ۳,۴۰۰,۰۰۰ تومان • بانک قرض‌الحسنه مهر ایران (۱ روز مانده)',
+      amount: 3400000,
+      bank: 'بانک مهر ایران',
+      daysLeft: 1,
+      paid: false,
+      dismissed: false
+    },
+    {
+      id: 502,
+      title: 'پرداخت قسط تسهیلات بانک ملی',
+      subtitle: 'مبلغ ۲,۱۵۰,۰۰۰ تومان • یادآور ۶ روز مانده به موعد',
+      amount: 2150000,
+      bank: 'بانک ملی ایران',
+      daysLeft: 6,
+      paid: false,
+      dismissed: false
+    }
+  ];
+
+  let CATEGORIES = JSON.parse(localStorage.getItem('taraz_prod_cats')) || DEFAULT_CATEGORIES;
+  let transactions = JSON.parse(localStorage.getItem('taraz_prod_tx')) || DEFAULT_TX;
+  let installments = JSON.parse(localStorage.getItem('taraz_prod_inst')) || DEFAULT_INST;
+
+  function persistState() {
+    localStorage.setItem('taraz_prod_cats', JSON.stringify(CATEGORIES));
+    localStorage.setItem('taraz_prod_tx', JSON.stringify(transactions));
+    localStorage.setItem('taraz_prod_inst', JSON.stringify(installments));
+    syncAndroidNativeNotifications();
+  }
+
+  function syncAndroidNativeNotifications() {
+    if (window.AndroidBridge && window.AndroidBridge.syncLockedNotification) {
+      installments.forEach(inst => {
+        if (!inst.paid && (inst.daysLeft <= 1 || (inst.daysLeft <= 7 && !inst.dismissed))) {
+          window.AndroidBridge.syncLockedNotification(inst.id, inst.title, inst.subtitle, inst.daysLeft <= 1);
+        } else if (window.AndroidBridge.cancelInstallmentNotification) {
+          window.AndroidBridge.cancelInstallmentNotification(inst.id);
+        }
+      });
+    }
+  }
+
+  // Called directly by Native Android BroadcastReceiver when real Bank SMS arrives!
+  window.onRealBankSmsReceived = function(rawSmsText) {
+    openSmsModalFromText(rawSmsText);
+  };
+
+  let activeFilter = 'همه';
+  let openTreePillars = { expense: true, income: false, saving: false, transfer: false };
+  let openTreeCats = {};
+  let currentManualPillar = 'expense';
+  let savingRatePct = 15;
+  let pendingSmsDraft = null;
+
+  function toFa(n) { return String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]); }
+  function fmt(n) { return toFa(Math.round(n).toLocaleString('en-US')); }
+
+  function setSkin(skinName, btn) {
+    document.body.setAttribute('data-skin', skinName);
+    localStorage.setItem('taraz_prod_skin', skinName);
+    document.querySelectorAll('.skin-chip').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    renderAll();
+  }
+
+  function switchScreen(screenId, navBtn) {
+    document.querySelectorAll('.screen-view').forEach(s => s.classList.remove('active'));
+    document.getElementById('screen-' + screenId).classList.add('active');
+    document.querySelectorAll('.b-nav-item').forEach(b => b.classList.remove('active'));
+    if (navBtn) navBtn.classList.add('active');
+  }
+
+  function openTreeOnPillar(pillarKey) {
+    openTreePillars = { expense: false, income: false, saving: false, transfer: false };
+    openTreePillars[pillarKey] = true;
+    switchScreen('tree', document.getElementById('nav-tree'));
+    renderAll();
+  }
+
+  function renderAll() {
+    const totals = { income: 0, expense: 0, saving: 0, transfer: 0 };
+    transactions.forEach(t => { if (totals[t.pillar] !== undefined) totals[t.pillar] += t.amount; });
+
+    const netFree = Math.max(0, totals.income - totals.expense - totals.saving);
+    document.getElementById('heroBalanceVal').textContent = fmt(netFree) + ' تومان';
+    document.getElementById('heroIncMini').textContent = toFa((totals.income / 1000000).toFixed(1)) + ' م';
+    document.getElementById('heroExpMini').textContent = toFa((totals.expense / 1000000).toFixed(1)) + ' م';
+    document.getElementById('heroSavMini').textContent = toFa((totals.saving / 1000000).toFixed(1)) + ' م';
+
+    document.getElementById('waveIncomeVal').textContent = fmt(totals.income);
+    document.getElementById('waveExpenseVal').textContent = fmt(totals.expense);
+
+    const savePct = totals.income > 0 ? Math.round((totals.saving / totals.income) * 100) : 0;
+    document.getElementById('donutSavePct').textContent = toFa(savePct) + '٪';
+
+    renderHeroDonut(totals);
+    renderDashboardList();
+    renderThreeLevelTree(totals);
+    renderInstallmentsAndNotifs();
+    renderSettingsCategories();
+  }
+
+  function renderHeroDonut(totals) {
+    const svg = document.getElementById('heroDonutSvg');
+    const sum = totals.income + totals.expense + totals.saving || 1;
+    const rOut = 42, rIn = 30;
+    const cOut = 2 * Math.PI * rOut;
+    const cIn = 2 * Math.PI * rIn;
+
+    const skin = document.body.getAttribute('data-skin');
+    const colors = skin === 'warm-olive'
+      ? ['#738458', '#B86B52', '#D4A359']
+      : skin === 'vivid-glass'
+      ? ['#34D399', '#F472B6', '#A78BFA']
+      : ['#10B981', '#F43F5E', '#6366F1'];
+
+    const segs = [
+      { val: totals.income, col: colors[0] },
+      { val: totals.expense, col: colors[1] },
+      { val: totals.saving, col: colors[2] }
+    ];
+
+    let html = `
+      <circle cx="55" cy="55" r="${rOut}" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="11"/>
+      <circle cx="55" cy="55" r="${rIn}" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="8"/>
+    `;
+
+    let offset = 0;
+    segs.forEach(s => {
+      const dash = (s.val / sum) * cOut;
+      html += `
+        <circle cx="55" cy="55" r="${rOut}" fill="none" stroke="${s.col}"
+          stroke-width="11" stroke-linecap="round"
+          stroke-dasharray="${Math.max(0, dash - 4)} ${cOut}"
+          stroke-dashoffset="${-offset}"
+          transform="rotate(-90 55 55)"/>
+      `;
+      offset += dash;
+    });
+
+    const saveDash = Math.min(cIn, (totals.saving / (totals.income || 1)) * cIn);
+    html += `
+      <circle cx="55" cy="55" r="${rIn}" fill="none" stroke="${colors[2]}"
+        stroke-width="8" stroke-linecap="round"
+        stroke-dasharray="${saveDash} ${cIn}"
+        transform="rotate(-90 55 55)"/>
+    `;
+    svg.innerHTML = html;
+  }
+
+  function renderDashboardList() {
+    const filters = ['همه', 'مسکن', 'اقساط', 'خوراکی', 'درآمدها', 'پس‌انداز'];
+    document.getElementById('dashboardFilterPills').innerHTML = filters.map(f => `
+      <button class="filter-pill ${activeFilter === f ? 'active' : ''}" onclick="setDashFilter('${f}')">${f}</button>
+    `).join('');
+
+    const filtered = transactions.filter(t => {
+      if (activeFilter === 'همه') return true;
+      if (activeFilter === 'درآمدها') return t.pillar === 'income';
+      if (activeFilter === 'پس‌انداز') return t.pillar === 'saving';
+      return t.category.includes(activeFilter) || t.title.includes(activeFilter);
+    }).slice().reverse();
+
+    if (filtered.length === 0) {
+      document.getElementById('recentTransactionsList').innerHTML = `<div style="text-align:center; padding:24px; color:var(--text-sub); font-size:12px;">هنوز تراکنشی ثبت نشده است.</div>`;
+      return;
+    }
+
+    document.getElementById('recentTransactionsList').innerHTML = filtered.map(t => `
+      <div class="clean-tx-card">
+        <div class="tx-right-group">
+          <div class="tx-pastel-icon" style="background:${t.bg || '#E0F2FE'}">${t.icon || '💳'}</div>
+          <div class="tx-info">
+            <h4>${t.title}</h4>
+            <p>${t.bank} • ${t.date}</p>
+          </div>
+        </div>
+        <div class="tx-left-group">
+          <span class="price">${fmt(t.amount)} تومان</span>
+          <span class="status-chip ${t.pillar === 'income' ? 'green' : t.status === 'تراکنش پیامکی' ? 'amber' : 'green'}">${t.status}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function setDashFilter(f) { activeFilter = f; renderDashboardList(); }
+
+  function renderThreeLevelTree(totals) {
+    const pillars = [
+      { key: 'expense', title: 'هزینه‌ها و مخارج', icon: '🔴', color: '#E11D48' },
+      { key: 'income', title: 'درآمدها و ورودی‌ها', icon: '🟢', color: '#059669' },
+      { key: 'saving', title: 'پس‌انداز تعهدی', icon: '🔐', color: '#7C3AED' },
+      { key: 'transfer', title: 'انتقال بین حساب‌های خودم', icon: '🔄', color: '#0284C7' }
+    ];
+
+    let html = '';
+    pillars.forEach(p => {
+      const pTx = transactions.filter(t => t.pillar === p.key);
+      const pTotal = totals[p.key] || 0;
+      const isOpen = !!openTreePillars[p.key];
+
+      const catMap = {};
+      pTx.forEach(t => {
+        if (!catMap[t.category]) catMap[t.category] = { name: t.category, total: 0, items: [] };
+        catMap[t.category].total += t.amount;
+        catMap[t.category].items.push(t);
+      });
+
+      const sortedCats = Object.values(catMap).sort((a, b) => b.total - a.total);
+
+      html += `
+        <div class="tree-pillar-box ${isOpen ? 'open' : ''}">
+          <div class="tree-pillar-head" onclick="toggleTreePillar('${p.key}')">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span style="font-size:18px;">${p.icon}</span>
+              <div>
+                <strong style="font-size:14px;">${p.title}</strong>
+                <div style="font-size:10.5px; color:var(--text-sub);">${toFa(sortedCats.length)} دسته‌بندی فعال</div>
+              </div>
+            </div>
+            <div style="text-align:left;">
+              <strong style="font-size:15px; color:${p.color};">${fmt(pTotal)} تومان</strong>
+              <div style="font-size:10px; color:var(--text-sub);">${isOpen ? 'بستن ▲' : 'باز کردن دسته‌ها ▼'}</div>
+            </div>
+          </div>
+          <div class="tree-pillar-body">
+      `;
+
+      if (sortedCats.length === 0) {
+        html += `<div style="font-size:11.5px; color:var(--text-sub); text-align:center; padding:8px;">موردی ثبت نشده است.</div>`;
+      } else {
+        sortedCats.forEach((c, idx) => {
+          const pct = pTotal > 0 ? Math.round((c.total / pTotal) * 100) : 0;
+          const cKey = `${p.key}__${c.name}`;
+          const cOpen = !!openTreeCats[cKey];
+
+          html += `
+            <div class="sorted-cat-card ${cOpen ? 'open' : ''}">
+              <div class="sorted-cat-head" onclick="toggleTreeCat('${cKey}')">
+                <div class="sorted-cat-bar" style="width:${pct}%; background:${p.color};"></div>
+                <div style="display:flex; justify-content:space-between; align-items:center; position:relative; z-index:1;">
+                  <span style="font-size:12.5px; font-weight:900;">رتبه ${toFa(idx + 1)}: ${c.name}</span>
+                  <span style="font-size:13px; font-weight:900;">${fmt(c.total)} تومان (${toFa(pct)}٪)</span>
+                </div>
+                <div style="font-size:10px; color:var(--text-sub); margin-top:4px; position:relative; z-index:1;">
+                  شامل ${toFa(c.items.length)} تراکنش • ${cOpen ? 'بستن ریزتراکنش‌ها ▲' : 'مشاهده ریزتراکنش‌ها ▼'}
+                </div>
+              </div>
+              <div class="sorted-cat-micro">
+                ${c.items.map(item => `
+                  <div style="display:flex; justify-content:space-between; padding:6px 4px; border-bottom:1px solid var(--border-soft); font-size:11.5px;">
+                    <span>• <strong>${item.title}</strong> (${item.bank})</span>
+                    <strong style="color:${p.color};">${fmt(item.amount)} تومان</strong>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        });
+      }
+      html += `</div></div>`;
+    });
+
+    document.getElementById('hierarchicalTreeMount').innerHTML = html;
+  }
+
+  function toggleTreePillar(k) { openTreePillars[k] = !openTreePillars[k]; renderAll(); }
+  function toggleTreeCat(k) { openTreeCats[k] = !openTreeCats[k]; renderAll(); }
+
+  function renderInstallmentsAndNotifs() {
+    const activeNotifs = installments.filter(i => !i.paid && (i.daysLeft <= 1 || (i.daysLeft <= 7 && !i.dismissed)));
+    const strip = document.getElementById('lockedNotifStrip');
+    const bannerList = document.getElementById('notifBannerList');
+    const bellDot = document.getElementById('bellDot');
+
+    if (activeNotifs.length === 0) {
+      strip.classList.remove('active');
+      bellDot.style.display = 'none';
+    } else {
+      strip.classList.add('active');
+      bellDot.style.display = 'block';
+      bannerList.innerHTML = activeNotifs.map(i => `
+        <div class="notif-banner-item ${i.daysLeft <= 1 ? 'urgent-1day' : ''}" id="top-notif-${i.id}">
+          <div style="font-size:11px;">
+            <strong>${i.daysLeft <= 1 ? '🔒' : '🔔'} ${i.title}</strong>
+            <div style="font-size:10px; opacity:0.85;">${i.subtitle}</div>
+          </div>
+          <div style="display:flex; gap:5px; flex-shrink:0;">
+            <button class="pill-action-btn pill-pay" style="padding:5px 10px; font-size:10px;" onclick="payInstallment(${i.id})">پرداخت کردم</button>
+            <button class="pill-action-btn pill-del" style="padding:5px 10px; font-size:10px;" onclick="tryDeleteInstallmentNotif(${i.id})">حذف اعلان</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    document.getElementById('installmentCardsMount').innerHTML = installments.map(i => `
+      <div class="inst-pill-card ${!i.paid && i.daysLeft <= 1 ? 'locked-border' : ''}" id="inst-card-${i.id}">
+        <h3>${i.title}</h3>
+        <p>${i.paid ? '✅ پرداخت این ماه ثبت شد و اعلان از لیست حذف گردید' : i.subtitle}</p>
+        ${
+          i.paid
+            ? `<span class="status-chip green">تسویه شده در این ماه</span>`
+            : `
+              <div class="inst-dual-buttons">
+                <button class="pill-action-btn pill-pay" onclick="payInstallment(${i.id})">پرداخت کردم</button>
+                <button class="pill-action-btn pill-del" onclick="tryDeleteInstallmentNotif(${i.id})">حذف اعلان</button>
+              </div>
+            `
+        }
+      </div>
+    `).join('');
+  }
+
+  function payInstallment(id) {
+    const inst = installments.find(x => x.id === id);
+    if (!inst || inst.paid) return;
+    inst.paid = true;
+    document.getElementById('lockedToastMsg').style.display = 'none';
+
+    transactions.push({
+      id: Date.now(),
+      pillar: 'expense',
+      category: '📅 پرداخت شارژ و اقساط ماهانه',
+      title: inst.title,
+      amount: inst.amount,
+      bank: inst.bank,
+      date: 'ثبت اقساط',
+      status: 'پرداخت شده',
+      icon: '📅',
+      bg: '#D1FAE5'
+    });
+
+    persistState();
+    renderAll();
+  }
+
+  function tryDeleteInstallmentNotif(id) {
+    const inst = installments.find(x => x.id === id);
+    if (!inst) return;
+    if (inst.daysLeft <= 1) {
+      const topEl = document.getElementById('top-notif-' + id);
+      const cardEl = document.getElementById('inst-card-' + id);
+      [topEl, cardEl].forEach(el => {
+        if (el) { el.classList.remove('shake'); void el.offsetWidth; el.classList.add('shake'); }
+      });
+      const toast = document.getElementById('lockedToastMsg');
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 4000);
+      return;
+    }
+    inst.dismissed = true;
+    persistState();
+    renderAll();
+  }
+
+  function toggleAddInstallmentBox() {
+    const b = document.getElementById('addInstallmentBox');
+    b.style.display = b.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function saveNewInstallment() {
+    const title = document.getElementById('newInstTitle').value.trim();
+    const amount = parseInt(document.getElementById('newInstAmount').value, 10);
+    const bank = document.getElementById('newInstBank').value.trim() || 'بانک عامل';
+    const daysLeft = parseInt(document.getElementById('newInstDaysLeft').value, 10);
+    if (!title || !amount) return alert('لطفاً عنوان و مبلغ قسط را وارد کنید.');
+
+    installments.unshift({
+      id: Math.floor(Date.now() / 1000),
+      title,
+      subtitle: `مبلغ ${fmt(amount)} تومان • ${bank} (${toFa(daysLeft)} روز مانده)`,
+      amount,
+      bank,
+      daysLeft,
+      paid: false,
+      dismissed: false
+    });
+
+    document.getElementById('newInstTitle').value = '';
+    document.getElementById('newInstAmount').value = '';
+    document.getElementById('addInstallmentBox').style.display = 'none';
+    persistState();
+    renderAll();
+  }
+
+  function normalizeNum(s) {
+    return s.replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d))
+            .replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d));
+  }
+
+  function openSmsModalFromText(rawText) {
+    const clean = normalizeNum(rawText);
+    const isInc = /(واریز|سود|بستانکار)/.test(clean) && !/(برداشت|خرید|کسر)/.test(clean);
+    const pillar = isInc ? 'income' : 'expense';
+
+    const matches = [...clean.matchAll(/(\d{1,3}(?:,\d{3})+|\d{5,})/g)].map(m => parseInt(m[0].replace(/,/g, ''), 10));
+    const rial = matches.length > 0 ? matches[0] : 5000000;
+    const toman = Math.round(rial / 10);
+    const saveAmt = isInc ? Math.round((toman * savingRatePct) / 100) : (50000 - (toman % 50000));
+
+    let bankName = 'بانک عضو شتاب';
+    const bankList = ['بانک ملی', 'بانک ملت', 'بانک صادرات', 'مهر ایران', 'بلوبانک', 'بانک سپه', 'بانک تجارت', 'بانک مسکن', 'پاسارگاد', 'رسالت'];
+    for (const b of bankList) { if (clean.includes(b)) { bankName = b; break; } }
+
+    pendingSmsDraft = {
+      pillar, amount: toman, saveAmt,
+      category: CATEGORIES[pillar][0],
+      bank: bankName
+    };
+
+    document.getElementById('modalBankTitle').textContent = pendingSmsDraft.bank;
+    document.getElementById('modalAmountVal').textContent = fmt(toman) + ' تومان';
+    document.getElementById('modalTypeBadge').textContent = isInc ? 'واریز / درآمد' : 'برداشت / هزینه';
+    document.getElementById('modalTypeBadge').className = 'status-chip ' + (isInc ? 'green' : 'rose');
+    document.getElementById('modalAutoSaveText').textContent = isInc
+      ? `کسر خودکار ${toFa(savingRatePct)}٪ پس‌انداز تعهدی (${fmt(saveAmt)} تومان)`
+      : `گرد کردن خرده‌پول به قلک پس‌انداز (${fmt(saveAmt)} تومان)`;
+
+    renderModalCatPills();
+    document.getElementById('smsPopupModal').classList.add('active');
+  }
+
+  function renderModalCatPills() {
+    if (!pendingSmsDraft) return;
+    const list = CATEGORIES[pendingSmsDraft.pillar] || [];
+    document.getElementById('modalCategoryPills').innerHTML = list.map(c => `
+      <button class="filter-pill ${pendingSmsDraft.category === c ? 'active' : ''}" onclick="pendingSmsDraft.category='${c}'; renderModalCatPills();">${c}</button>
+    `).join('');
+  }
+
+  function promptNewCategoryInline() {
+    const name = prompt('نام دسته‌بندی جدید را وارد کنید:');
+    if (!name || !pendingSmsDraft) return;
+    const formatted = '🏷️ ' + name.trim();
+    CATEGORIES[pendingSmsDraft.pillar].unshift(formatted);
+    pendingSmsDraft.category = formatted;
+    persistState();
+    renderModalCatPills();
+    renderSettingsCategories();
+  }
+
+  function confirmSmsModal() {
+    if (!pendingSmsDraft) return;
+    const note = document.getElementById('modalNoteInput').value.trim() || pendingSmsDraft.category;
+
+    transactions.push({
+      id: Date.now(),
+      pillar: pendingSmsDraft.pillar,
+      category: pendingSmsDraft.category,
+      title: note,
+      amount: pendingSmsDraft.amount,
+      bank: pendingSmsDraft.bank,
+      date: 'ثبت پیامکی',
+      status: 'تراکنش پیامکی',
+      icon: pendingSmsDraft.pillar === 'income' ? '🟢' : '🧾',
+      bg: pendingSmsDraft.pillar === 'income' ? '#D1FAE5' : '#FEF3C7'
+    });
+
+    if (document.getElementById('modalAutoSaveCheck').checked && pendingSmsDraft.saveAmt > 0) {
+      transactions.push({
+        id: Date.now() + 1,
+        pillar: 'saving',
+        category: '🔐 پس‌انداز تعهدی ماهانه',
+        title: `پس‌انداز خودکار از ${note}`,
+        amount: pendingSmsDraft.saveAmt,
+        bank: pendingSmsDraft.bank,
+        date: 'ثبت خودکار',
+        status: 'قفل شده',
+        icon: '🔐',
+        bg: '#EDE9FE'
+      });
+    }
+
+    document.getElementById('modalNoteInput').value = '';
+    closeSmsModal();
+    persistState();
+    renderAll();
+  }
+
+  function closeSmsModal() { document.getElementById('smsPopupModal').classList.remove('active'); }
+
+  function triggerCustomSmsFromInput() {
+    const txt = document.getElementById('customSmsTextarea').value.trim();
+    if (txt) openSmsModalFromText(txt);
+  }
+
+  function setManualPillar(p) {
+    currentManualPillar = p;
+    ['expense', 'income', 'saving', 'transfer'].forEach(k => {
+      document.getElementById('mBtn-' + k).className = 'filter-pill' + (k === p ? ' active' : '');
+    });
+    document.getElementById('mCategorySelect').innerHTML = (CATEGORIES[p] || []).map(c => `<option value="${c}">${c}</option>`).join('');
+  }
+
+  function submitManualTx() {
+    const amt = parseInt(document.getElementById('mAmountInput').value, 10);
+    const cat = document.getElementById('mCategorySelect').value;
+    const title = document.getElementById('mTitleInput').value.trim() || cat;
+    if (!amt) return alert('لطفاً مبلغ را وارد کنید.');
+
+    transactions.push({
+      id: Date.now(),
+      pillar: currentManualPillar,
+      category: cat,
+      title,
+      amount: amt,
+      bank: 'ثبت دستی',
+      date: 'ثبت دستی',
+      status: 'پرداخت شده',
+      icon: '✍️',
+      bg: '#E0F2FE'
+    });
+
+    document.getElementById('mAmountInput').value = '';
+    document.getElementById('mTitleInput').value = '';
+    persistState();
+    switchScreen('dashboard', document.getElementById('nav-dash'));
+    renderAll();
+  }
+
+  function setSavingRate(pct, btn) {
+    savingRatePct = pct;
+    ['15', '5', '2'].forEach(k => document.getElementById('sMode-' + k).classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  function renderSettingsCategories() {
+    const p = document.getElementById('setCatPillar').value;
+    const list = CATEGORIES[p] || [];
+    document.getElementById('settingsCatList').innerHTML = list.map((c, idx) => `
+      <span class="filter-pill" style="display:inline-flex; align-items:center; gap:6px;">
+        <span>${c}</span>
+        <b style="color:#EF4444; cursor:pointer;" onclick="removeCategory('${p}', ${idx})">×</b>
+      </span>
+    `).join('');
+  }
+
+  function addCustomCategory() {
+    const p = document.getElementById('setCatPillar').value;
+    const emo = document.getElementById('setCatEmoji').value;
+    const name = document.getElementById('setNewCatName').value.trim();
+    if (!name) return;
+    CATEGORIES[p].unshift(`${emo} ${name}`);
+    document.getElementById('setNewCatName').value = '';
+    persistState();
+    setManualPillar(currentManualPillar);
+    renderSettingsCategories();
+  }
+
+  function removeCategory(p, idx) {
+    if (CATEGORIES[p].length <= 1) return;
+    CATEGORIES[p].splice(idx, 1);
+    persistState();
+    setManualPillar(currentManualPillar);
+    renderSettingsCategories();
+  }
+
+  function clearAllDemoData() {
+    if (!confirm('آیا مطمئن هستید که می‌خواهید تراکنش‌ها و اقساط نمونه را پاک کنید و از صفر شروع کنید؟')) return;
+    transactions = [];
+    installments = [];
+    persistState();
+    renderAll();
+    alert('تمام داده‌های نمونه پاک شدند. اکنون می‌توانید اطلاعات واقعی خود را ثبت کنید.');
+  }
+
+  // Restore saved skin
+  const savedSkin = localStorage.getItem('taraz_prod_skin') || 'aqua-pastel';
+  setSkin(savedSkin, document.getElementById('skinBtn-' + savedSkin));
+  setManualPillar('expense');
+  renderAll();
+  syncAndroidNativeNotifications();
+</script>
+</body>
+</html>
