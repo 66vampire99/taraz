@@ -3,119 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <meta name="theme-color" content="#0284C7" />
+  <meta name="theme-color" content="#0F172A" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <title>ترازنگار — ژورنال هوشمند دخل و خرج، پس‌انداز و اقساط</title>
+  <title>ترازنگار</title>
+
+  <!-- Custom High-Res SVG App Icon (For Home Screen, Favicon & WebAPK) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23059669'/%3E%3Cstop offset='50%25' stop-color='%230284C7'/%3E%3Cstop offset='100%25' stop-color='%234F46E5'/%3E%3C/linearGradient%3E%3ClinearGradient id='gold' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FDE047'/%3E%3Cstop offset='100%25' stop-color='%23F59E0B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='128' fill='url(%23bg)'/%3E%3Ccircle cx='256' cy='256' r='170' fill='none' stroke='rgba(255,255,255,0.22)' stroke-width='28'/%3E%3Cpath d='M256 86 A170 170 0 1 1 110 340' fill='none' stroke='url(%23gold)' stroke-width='30' stroke-linecap='round'/%3E%3Crect x='176' y='196' width='160' height='120' rx='28' fill='%23FFFFFF'/%3E%3Ccircle cx='256' cy='256' r='26' fill='%230284C7'/%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='128' fill='%230284C7'/%3E%3Ccircle cx='256' cy='256' r='150' fill='none' stroke='%23FDE047' stroke-width='34'/%3E%3C/svg%3E" />
+
   <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+
   <style>
+    /* ================= 3 ULTRA-VIVID, ALIVE SKINS ================= */
     :root,
-    [data-skin="aqua-pastel"] {
-      --app-bg: #F7F9FB;
-      --card-surface: #FFFFFF;
-      --card-subtle: #F0F4F8;
-      --text-main: #182630;
-      --text-sub: #64748B;
-      --border-soft: #E2E8F0;
-
-      --hero-balance-bg: linear-gradient(135deg, #67E8F9 0%, #38BDF8 55%, #0284C7 100%);
-      --hero-balance-text: #0F293A;
-      --hero-balance-sub: #164E63;
-
-      --income-card-bg: linear-gradient(160deg, #D1FAE5 0%, #A7F3D0 50%, #6EE7B7 100%);
-      --income-card-text: #064E3B;
-      --income-wave-stroke: #059669;
-      --income-wave-fill: rgba(5, 150, 105, 0.22);
-
-      --expense-card-bg: linear-gradient(160deg, #FFE4E6 0%, #FECDD3 50%, #FDA4AF 100%);
-      --expense-card-text: #881337;
-      --expense-wave-stroke: #E11D48;
-      --expense-wave-fill: rgba(225, 29, 72, 0.20);
-
-      --btn-pay-bg: #86EFAC;
-      --btn-pay-text: #064E3B;
-      --btn-del-bg: #FCA5A5;
-      --btn-del-text: #7F1D1D;
-      --btn-primary-bg: #6366F1;
-      --btn-primary-text: #FFFFFF;
-
-      --nav-bg: #FFFFFF;
-      --nav-active-pill: #E0F2FE;
-      --nav-active-text: #0284C7;
-      --sms-bubble-1: #E5E7EB;
-      --sms-bubble-2: #EDE9FE;
-    }
-
-    [data-skin="warm-olive"] {
-      --app-bg: #F6F2EA;
-      --card-surface: #FFFFFF;
-      --card-subtle: #EDE6D8;
-      --text-main: #232B28;
-      --text-sub: #6E6A61;
-      --border-soft: #E0D7C6;
-
-      --hero-balance-bg: linear-gradient(135deg, #E2D9C5 0%, #D4C8B0 100%);
-      --hero-balance-text: #1F2924;
-      --hero-balance-sub: #4B534D;
-
-      --income-card-bg: linear-gradient(160deg, #8A9A6E 0%, #738458 100%);
-      --income-card-text: #FFFFFF;
-      --income-wave-stroke: #FFFFFF;
-      --income-wave-fill: rgba(255, 255, 255, 0.22);
-
-      --expense-card-bg: linear-gradient(160deg, #C47457 0%, #B05B3E 100%);
-      --expense-card-text: #FFFFFF;
-      --expense-wave-stroke: #FFFFFF;
-      --expense-wave-fill: rgba(255, 255, 255, 0.22);
-
-      --btn-pay-bg: #849669;
-      --btn-pay-text: #FFFFFF;
-      --btn-del-bg: #B86B52;
-      --btn-del-text: #FFFFFF;
-      --btn-primary-bg: #1D3542;
-      --btn-primary-text: #FFFFFF;
-
-      --nav-bg: #EFEAE0;
-      --nav-active-pill: #DDD3C0;
-      --nav-active-text: #1F2924;
-      --sms-bubble-1: #C2C5C8;
-      --sms-bubble-2: #E4D8C4;
-    }
-
-    [data-skin="vivid-glass"] {
-      --app-bg: #F0F4F9;
-      --card-surface: #FFFFFF;
-      --card-subtle: #E4EBF5;
+    [data-skin="vivid-aurora"] {
+      --app-bg: #EEF2F9;
+      --bg-mesh-1: rgba(56, 189, 248, 0.25);
+      --bg-mesh-2: rgba(16, 185, 129, 0.22);
+      --card-surface: rgba(255, 255, 255, 0.92);
+      --card-subtle: #F1F5F9;
       --text-main: #0F172A;
       --text-sub: #475569;
-      --border-soft: #CBD5E1;
+      --border-soft: rgba(148, 163, 184, 0.28);
 
-      --hero-balance-bg: linear-gradient(135deg, #1E6B7B 0%, #2A9D8F 45%, #3B4371 100%);
-      --hero-balance-text: #FFFFFF;
-      --hero-balance-sub: #CCFBF1;
+      --hero-bg: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #0D9488 100%);
+      --hero-text: #FFFFFF;
+      --hero-sub: #99F6E4;
 
-      --income-card-bg: linear-gradient(155deg, #10B981 0%, #059669 60%, #047857 100%);
-      --income-card-text: #FFFFFF;
-      --income-wave-stroke: #A7F3D0;
-      --income-wave-fill: rgba(167, 243, 208, 0.28);
+      --income-bg: linear-gradient(145deg, #059669 0%, #10B981 55%, #34D399 100%);
+      --income-text: #FFFFFF;
+      --income-glow: 0 14px 28px -6px rgba(16, 185, 129, 0.45);
 
-      --expense-card-bg: linear-gradient(155deg, #F43F5E 0%, #E11D48 60%, #BE123C 100%);
-      --expense-card-text: #FFFFFF;
-      --expense-wave-stroke: #FECDD3;
-      --expense-wave-fill: rgba(254, 205, 211, 0.28);
+      --expense-bg: linear-gradient(145deg, #E11D48 0%, #F43F5E 55%, #FB7185 100%);
+      --expense-text: #FFFFFF;
+      --expense-glow: 0 14px 28px -6px rgba(244, 63, 94, 0.45);
 
-      --btn-pay-bg: #10B981;
-      --btn-pay-text: #FFFFFF;
-      --btn-del-bg: #F43F5E;
-      --btn-del-text: #FFFFFF;
-      --btn-primary-bg: #7C3AED;
-      --btn-primary-text: #FFFFFF;
+      --accent-primary: #4F46E5;
+      --accent-gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+      --nav-bg: rgba(255, 255, 255, 0.95);
+    }
 
+    [data-skin="aqua-pastel"] {
+      --app-bg: #F4F9FC;
+      --bg-mesh-1: rgba(103, 232, 249, 0.35);
+      --bg-mesh-2: rgba(167, 243, 208, 0.35);
+      --card-surface: #FFFFFF;
+      --card-subtle: #EBF3F9;
+      --text-main: #132A38;
+      --text-sub: #5B7687;
+      --border-soft: #D5E6F2;
+
+      --hero-bg: linear-gradient(135deg, #38BDF8 0%, #0284C7 55%, #0369A1 100%);
+      --hero-text: #FFFFFF;
+      --hero-sub: #E0F2FE;
+
+      --income-bg: linear-gradient(150deg, #A7F3D0 0%, #34D399 100%);
+      --income-text: #064E3B;
+      --income-glow: 0 12px 24px -6px rgba(52, 211, 153, 0.38);
+
+      --expense-bg: linear-gradient(150deg, #FECDD3 0%, #FB7185 100%);
+      --expense-text: #881337;
+      --expense-glow: 0 12px 24px -6px rgba(251, 113, 133, 0.38);
+
+      --accent-primary: #0284C7;
+      --accent-gradient: linear-gradient(135deg, #0284C7 0%, #0D9488 100%);
       --nav-bg: #FFFFFF;
-      --nav-active-pill: #EDE9FE;
-      --nav-active-text: #6D28D9;
-      --sms-bubble-1: #E2E8F0;
-      --sms-bubble-2: #DDD6FE;
+    }
+
+    [data-skin="warm-royal"] {
+      --app-bg: #F5EFE6;
+      --bg-mesh-1: rgba(217, 119, 6, 0.16);
+      --bg-mesh-2: rgba(132, 150, 105, 0.22);
+      --card-surface: #FFFDF9;
+      --card-subtle: #EAE0D0;
+      --text-main: #231F1D;
+      --text-sub: #6E655C;
+      --border-soft: #DCD0BE;
+
+      --hero-bg: linear-gradient(135deg, #2A362B 0%, #415443 55%, #849669 100%);
+      --hero-text: #FFFDF7;
+      --hero-sub: #E6DEC8;
+
+      --income-bg: linear-gradient(150deg, #6B8250 0%, #8A9A6E 100%);
+      --income-text: #FFFFFF;
+      --income-glow: 0 12px 24px -6px rgba(107, 130, 80, 0.4);
+
+      --expense-bg: linear-gradient(150deg, #B05B3E 0%, #D07A5B 100%);
+      --expense-text: #FFFFFF;
+      --expense-glow: 0 12px 24px -6px rgba(176, 91, 62, 0.4);
+
+      --accent-primary: #B45309;
+      --accent-gradient: linear-gradient(135deg, #B45309 0%, #D97706 100%);
+      --nav-bg: #FAF6EE;
     }
 
     * {
@@ -127,567 +107,1004 @@
     }
 
     body {
-      background: var(--app-bg);
+      background-color: var(--app-bg);
+      background-image:
+        radial-gradient(circle at 12% 10%, var(--bg-mesh-1) 0%, transparent 45%),
+        radial-gradient(circle at 88% 75%, var(--bg-mesh-2) 0%, transparent 50%);
+      background-attachment: fixed;
       color: var(--text-main);
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      max-width: 540px;
+      max-width: 520px;
       margin: 0 auto;
+      padding-bottom: 92px;
       position: relative;
-      padding-bottom: 76px;
+      overflow-x: hidden;
+      transition: background 0.35s ease;
     }
 
+    /* ================= ANIMATIONS & LIFE EFFECTS ================= */
+    @keyframes floatPulse {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-4px) scale(1.03); }
+    }
+
+    @keyframes shimmerSweep {
+      0% { transform: translateX(120%) skewX(-20deg); }
+      100% { transform: translateX(-180%) skewX(-20deg); }
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.92) translateY(10px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    @keyframes shakeLocked {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-6px); }
+      80% { transform: translateX(6px); }
+    }
+
+    .shake { animation: shakeLocked 0.38s ease; }
+
+    /* ================= ANDROID PERSISTENT LOCKED NOTIFICATION BAR ================= */
     .locked-notif-strip {
-      margin: 10px 16px 0;
-      background: #232A34;
+      margin: 12px 16px 0;
+      background: linear-gradient(135deg, #1E1B4B 0%, #31102F 100%);
       color: #FFF;
-      border-radius: 18px;
-      padding: 10px 12px;
+      border-radius: 22px;
+      padding: 12px;
       display: none;
       flex-direction: column;
-      gap: 8px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+      gap: 9px;
+      box-shadow: 0 14px 30px rgba(225, 29, 72, 0.28);
+      border: 1.5px solid rgba(244, 63, 94, 0.45);
     }
-    .locked-notif-strip.active { display: flex; }
+    .locked-notif-strip.active { display: flex; animation: popIn 0.3s ease; }
 
     .notif-banner-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 10px;
-      background: rgba(255,255,255,0.07);
-      border-right: 4px solid #F59E0B;
-      border-radius: 12px;
-      padding: 8px 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border-right: 4px solid #FBBF24;
+      border-radius: 14px;
+      padding: 9px 11px;
     }
     .notif-banner-item.urgent-1day {
-      background: rgba(239, 68, 68, 0.18);
-      border: 1px solid rgba(248, 113, 113, 0.5);
-      border-right: 4px solid #EF4444;
+      background: rgba(244, 63, 94, 0.22);
+      border-right: 4px solid #F43F5E;
     }
 
-    @keyframes shakeAnim {
-      0%, 100% { transform: translateX(0); }
-      20% { transform: translateX(-7px); }
-      40% { transform: translateX(7px); }
-      60% { transform: translateX(-5px); }
-      80% { transform: translateX(5px); }
-    }
-    .shake { animation: shakeAnim 0.35s ease; }
-
-    .top-greeting-bar {
-      padding: 14px 18px 8px;
+    /* ================= HEADER WITH CUSTOM 3D APP ICON ================= */
+    .top-header {
+      padding: 16px 18px 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .profile-greet { display: flex; align-items: center; gap: 10px; }
-    .avatar-circle {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: linear-gradient(135deg, #0284C7, #38BDF8);
-      color: #FFF; display: flex; align-items: center; justify-content: center;
-      font-weight: 900; font-size: 16px; border: 2px solid #FFF;
-    }
-    .greet-text h1 { font-size: 16px; font-weight: 900; color: var(--text-main); }
-    .greet-text p { font-size: 11px; color: var(--text-sub); font-weight: 600; }
 
-    .top-icon-actions { display: flex; align-items: center; gap: 8px; }
-    .icon-circle-btn {
-      width: 36px; height: 36px; border-radius: 50%;
-      background: var(--card-surface); border: 1px solid var(--border-soft);
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; font-size: 15px; position: relative;
-    }
-    .bell-dot {
-      position: absolute; top: 4px; right: 4px;
-      width: 9px; height: 9px; border-radius: 50%;
-      background: #EF4444; border: 1.5px solid #FFF;
+    .brand-cluster {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .skin-switcher-row { padding: 0 18px 10px; display: flex; gap: 6px; }
-    .skin-chip {
-      flex: 1; padding: 6px 4px; border-radius: 20px;
-      border: 1.5px solid var(--border-soft); background: var(--card-surface);
-      color: var(--text-sub); font-size: 10.5px; font-weight: 800;
-      text-align: center; cursor: pointer;
-    }
-    .skin-chip.active {
-      background: var(--btn-primary-bg); color: var(--btn-primary-text);
-      border-color: var(--btn-primary-bg);
+    .app-icon-3d {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #059669 0%, #0284C7 55%, #4F46E5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px -4px rgba(2, 132, 199, 0.45), inset 0 2px 4px rgba(255,255,255,0.4);
+      position: relative;
+      animation: floatPulse 4s ease-in-out infinite;
     }
 
-    .phone-content { flex: 1; padding: 4px 18px 18px; }
-    .screen-view { display: none; }
+    .brand-titles h1 {
+      font-size: 17px;
+      font-weight: 900;
+      color: var(--text-main);
+      letter-spacing: -0.3px;
+    }
+
+    .brand-titles p {
+      font-size: 11px;
+      color: var(--text-sub);
+      font-weight: 700;
+    }
+
+    .quick-header-btns {
+      display: flex;
+      gap: 8px;
+    }
+
+    .glass-circle-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: var(--card-surface);
+      border: 1.5px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.15s;
+    }
+    .glass-circle-btn:active { transform: scale(0.92); }
+
+    .notif-red-dot {
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #EF4444;
+      border: 2px solid #FFF;
+      display: none;
+    }
+
+    /* ================= SKIN SWITCHER PILLS ================= */
+    .skin-bar {
+      padding: 0 18px 12px;
+      display: flex;
+      gap: 7px;
+    }
+
+    .skin-pill {
+      flex: 1;
+      padding: 7px 6px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border-soft);
+      background: var(--card-surface);
+      color: var(--text-sub);
+      font-size: 11px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+
+    .skin-pill.active {
+      background: var(--accent-gradient);
+      color: #FFF;
+      border-color: transparent;
+      box-shadow: 0 6px 16px -4px rgba(79, 70, 229, 0.45);
+    }
+
+    /* ================= SCREEN VIEWS ================= */
+    .content-area {
+      padding: 0 18px;
+    }
+
+    .screen-view {
+      display: none;
+      animation: popIn 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+    }
     .screen-view.active { display: block; }
 
+    /* ================= THE 3 SIGNATURE CHART CARDS (VIVID & ALIVE) ================= */
     .hero-balance-card {
-      background: var(--hero-balance-bg); color: var(--hero-balance-text);
-      border-radius: 26px; padding: 18px;
-      display: flex; justify-content: space-between; align-items: center;
-      gap: 12px; box-shadow: 0 14px 30px -8px rgba(0, 0, 0, 0.14);
-      margin-bottom: 14px; position: relative; overflow: hidden;
-    }
-    .hero-balance-info { flex: 1; z-index: 2; }
-    .hero-balance-info .lbl { font-size: 12px; font-weight: 800; color: var(--hero-balance-sub); }
-    .hero-balance-info .main-val { font-size: 22px; font-weight: 900; margin: 2px 0 8px; }
-    .hero-mini-stats { display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 10.5px; font-weight: 800; color: var(--hero-balance-sub); }
-    .hero-donut-wrap { width: 106px; height: 106px; position: relative; display: flex; align-items: center; justify-content: center; }
-    .donut-center-tag { position: absolute; text-align: center; font-size: 10px; font-weight: 900; color: var(--hero-balance-text); }
-
-    .dual-wave-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
-    .wave-stat-card {
-      border-radius: 24px; padding: 15px 14px 0; position: relative;
-      overflow: hidden; min-height: 154px; display: flex; flex-direction: column;
-      justify-content: space-between; cursor: pointer;
-      box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.11);
-    }
-    .wave-stat-card.income-wave-card { background: var(--income-card-bg); color: var(--income-card-text); }
-    .wave-stat-card.expense-wave-card { background: var(--expense-card-bg); color: var(--expense-card-text); }
-    .wave-card-top .w-title { font-size: 12px; font-weight: 800; }
-    .wave-card-top .w-amount { font-size: 17px; font-weight: 900; margin-top: 4px; }
-    .wave-card-top .w-unit { font-size: 10px; font-weight: 700; opacity: 0.85; }
-    .wave-svg-holder { margin: 8px -14px 0; height: 64px; position: relative; }
-    .wave-svg-holder svg { width: 100%; height: 100%; display: block; }
-    .wave-pill-tag {
-      position: absolute; bottom: 8px; left: 10px; font-size: 9.5px; font-weight: 800;
-      padding: 2px 8px; border-radius: 10px; background: rgba(255, 255, 255, 0.35);
+      background: var(--hero-bg);
+      color: var(--hero-text);
+      border-radius: 28px;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 18px 36px -10px rgba(15, 23, 42, 0.35);
+      margin-bottom: 14px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .section-head-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-    .section-head-row h2 { font-size: 15px; font-weight: 900; }
-
-    .filter-pills-scroll { display: flex; gap: 7px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 10px; }
-    .filter-pill {
-      padding: 6px 14px; border-radius: 20px; background: var(--card-surface);
-      border: 1.5px solid var(--border-soft); font-size: 11.5px; font-weight: 800;
-      color: var(--text-sub); white-space: nowrap; cursor: pointer;
-    }
-    .filter-pill.active { background: var(--btn-primary-bg); color: var(--btn-primary-text); border-color: var(--btn-primary-bg); }
-
-    .clean-tx-card {
-      background: var(--card-surface); border: 1px solid var(--border-soft);
-      border-radius: 20px; padding: 12px 14px; margin-bottom: 10px;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .tx-right-group { display: flex; align-items: center; gap: 12px; }
-    .tx-pastel-icon { width: 46px; height: 46px; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 21px; }
-    .tx-info h4 { font-size: 13.5px; font-weight: 900; }
-    .tx-info p { font-size: 11px; color: var(--text-sub); margin-top: 2px; }
-    .tx-left-group { text-align: left; }
-    .tx-left-group .price { font-size: 14px; font-weight: 900; display: block; }
-    .status-chip { display: inline-block; margin-top: 4px; padding: 2px 9px; border-radius: 10px; font-size: 10px; font-weight: 800; }
-    .status-chip.green { background: #D1FAE5; color: #065F46; }
-    .status-chip.amber { background: #FEF3C7; color: #92400E; }
-    .status-chip.rose  { background: #FFE4E6; color: #9F1239; }
-
-    .tree-pillar-box {
-      background: var(--card-surface); border: 1.5px solid var(--border-soft);
-      border-radius: 22px; margin-bottom: 12px; overflow: hidden;
-    }
-    .tree-pillar-head { padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-    .tree-pillar-body { display: none; background: var(--card-subtle); padding: 12px; border-top: 1px dashed var(--border-soft); }
-    .tree-pillar-box.open .tree-pillar-body { display: block; }
-
-    .sorted-cat-card { background: var(--card-surface); border: 1px solid var(--border-soft); border-radius: 16px; margin-bottom: 8px; overflow: hidden; }
-    .sorted-cat-head { padding: 11px 13px; cursor: pointer; position: relative; }
-    .sorted-cat-bar { position: absolute; top: 0; right: 0; bottom: 0; opacity: 0.12; pointer-events: none; }
-    .sorted-cat-micro { display: none; background: var(--app-bg); padding: 10px; border-top: 1px dashed var(--border-soft); }
-    .sorted-cat-card.open .sorted-cat-micro { display: block; }
-
-    .inst-pill-card {
-      background: var(--card-surface); border: 1px solid var(--border-soft);
-      border-radius: 24px; padding: 16px; margin-bottom: 12px; text-align: center;
-    }
-    .inst-pill-card.locked-border { border: 2px solid #EF4444; }
-    .inst-pill-card h3 { font-size: 15px; font-weight: 900; margin-bottom: 4px; }
-    .inst-pill-card p { font-size: 11.5px; color: var(--text-sub); margin-bottom: 12px; }
-    .inst-dual-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .pill-action-btn { padding: 10px 12px; border-radius: 24px; border: none; font-size: 12.5px; font-weight: 900; cursor: pointer; }
-    .pill-pay { background: var(--btn-pay-bg); color: var(--btn-pay-text); }
-    .pill-del { background: var(--btn-del-bg); color: var(--btn-del-text); }
-
-    .send-sms-pill-btn {
-      width: 100%; padding: 13px; border-radius: 26px; border: none;
-      background: var(--btn-primary-bg); color: var(--btn-primary-text);
-      font-size: 13.5px; font-weight: 900; cursor: pointer; margin-top: 6px;
+    .hero-balance-card::before {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0; width: 65%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.11), transparent);
+      animation: shimmerSweep 6s infinite;
+      pointer-events: none;
     }
 
-    .bottom-nav-bar {
-      position: fixed; bottom: 0; left: 0; right: 0;
-      max-width: 540px; margin: 0 auto;
-      background: var(--nav-bg); border-top: 1px solid var(--border-soft);
-      padding: 8px 12px 12px; display: flex; justify-content: space-around; align-items: center;
+    .hero-info { flex: 1; z-index: 2; }
+    .hero-info .lbl { font-size: 11.5px; font-weight: 800; color: var(--hero-sub); }
+    .hero-info .big-amount { font-size: 24px; font-weight: 900; margin: 4px 0 10px; letter-spacing: -0.5px; }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .hero-mini-pill {
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(6px);
+      padding: 4px 9px;
+      border-radius: 10px;
+      font-size: 10px;
+      font-weight: 800;
+      color: #FFF;
+    }
+
+    .hero-donut-box {
+      width: 110px;
+      height: 110px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      z-index: 2;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.28));
+    }
+
+    .donut-center {
+      position: absolute;
+      text-align: center;
+      font-size: 10px;
+      font-weight: 900;
+      color: var(--hero-text);
+    }
+
+    /* Dual Wave Cards */
+    .dual-wave-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .wave-card {
+      border-radius: 24px;
+      padding: 16px 14px 0;
+      min-height: 156px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .wave-card:active { transform: scale(0.97); }
+
+    .wave-card.income {
+      background: var(--income-bg);
+      color: var(--income-text);
+      box-shadow: var(--income-glow);
+    }
+
+    .wave-card.expense {
+      background: var(--expense-bg);
+      color: var(--expense-text);
+      box-shadow: var(--expense-glow);
+    }
+
+    .wave-card .w-label { font-size: 12px; font-weight: 800; opacity: 0.92; }
+    .wave-card .w-val { font-size: 18px; font-weight: 900; margin-top: 4px; }
+    .wave-card .w-sub { font-size: 10px; font-weight: 700; opacity: 0.85; margin-top: 2px; }
+
+    .wave-art {
+      margin: 8px -14px 0;
+      height: 62px;
+      position: relative;
+    }
+    .wave-art svg { width: 100%; height: 100%; display: block; }
+
+    /* ================= CARDS, TRANSACTIONS & DELETE BUTTONS ================= */
+    .section-title-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .section-title-bar h2 { font-size: 15px; font-weight: 900; }
+
+    .filter-scroll {
+      display: flex;
+      gap: 7px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+      scrollbar-width: none;
+    }
+    .filter-scroll::-webkit-scrollbar { display: none; }
+
+    .chip-btn {
+      padding: 6px 13px;
+      border-radius: 18px;
+      background: var(--card-surface);
+      border: 1.5px solid var(--border-soft);
+      color: var(--text-sub);
+      font-size: 11.5px;
+      font-weight: 800;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .chip-btn.active {
+      background: var(--accent-gradient);
+      color: #FFF;
+      border-color: transparent;
+    }
+
+    /* Alive Empty State Card (When App is 100% Clean) */
+    .empty-alive-box {
+      background: var(--card-surface);
+      border: 2px dashed var(--border-soft);
+      border-radius: 26px;
+      padding: 28px 18px;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .empty-orb {
+      width: 64px;
+      height: 64px;
+      border-radius: 22px;
+      background: var(--accent-gradient);
+      color: #FFF;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      box-shadow: 0 12px 24px -6px rgba(79, 70, 229, 0.45);
+      animation: floatPulse 3.2s infinite;
+    }
+
+    /* Transaction Item with Direct Delete Button */
+    .tx-row-card {
+      background: var(--card-surface);
+      border: 1.5px solid var(--border-soft);
+      border-radius: 20px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.035);
+      animation: popIn 0.2s ease;
+    }
+
+    .tx-right {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 0;
+    }
+
+    .tx-ico-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .tx-meta h4 {
+      font-size: 13.5px;
+      font-weight: 900;
+      color: var(--text-main);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .tx-meta p {
+      font-size: 11px;
+      color: var(--text-sub);
+      margin-top: 2px;
+    }
+
+    .tx-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .tx-price-col {
+      text-align: left;
+    }
+
+    .tx-price-col .val {
+      font-size: 14px;
+      font-weight: 900;
+      display: block;
+    }
+
+    /* THE DELETE BUTTON ON EVERY ITEM */
+    .trash-del-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
+      border: 1px solid rgba(244, 63, 94, 0.25);
+      background: #FFF1F2;
+      color: #E11D48;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.15s;
+      flex-shrink: 0;
+    }
+    .trash-del-btn:hover, .trash-del-btn:active {
+      background: #E11D48;
+      color: #FFF;
+      transform: scale(0.93);
+    }
+
+    /* ================= 3-LEVEL TREE (HIGH TO LOW) ================= */
+    .pillar-box {
+      background: var(--card-surface);
+      border: 1.5px solid var(--border-soft);
+      border-radius: 22px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    }
+
+    .pillar-head {
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .pillar-body {
+      display: none;
+      background: var(--card-subtle);
+      padding: 12px;
+      border-top: 1px dashed var(--border-soft);
+    }
+    .pillar-box.open .pillar-body { display: block; }
+
+    .cat-rank-box {
+      background: var(--card-surface);
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+
+    .cat-rank-head {
+      padding: 11px 13px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .cat-rank-fill {
+      position: absolute;
+      top: 0; right: 0; bottom: 0;
+      opacity: 0.13;
+      pointer-events: none;
+    }
+
+    .cat-micro-items {
+      display: none;
+      background: var(--app-bg);
+      padding: 10px;
+      border-top: 1px dashed var(--border-soft);
+    }
+    .cat-rank-box.open .cat-micro-items { display: block; }
+
+    /* ================= INSTALLMENT PILL CARDS ================= */
+    .inst-card {
+      background: var(--card-surface);
+      border: 1.5px solid var(--border-soft);
+      border-radius: 24px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+      position: relative;
+    }
+    .inst-card.urgent { border: 2px solid #F43F5E; }
+
+    .inst-btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .pill-btn {
+      padding: 10px 12px;
+      border-radius: 20px;
+      border: none;
+      font-size: 12px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+    .pill-btn:active { transform: scale(0.96); }
+    .pill-btn.pay { background: #10B981; color: #FFF; box-shadow: 0 6px 14px rgba(16, 185, 129, 0.3); }
+    .pill-btn.del { background: #FFE4E6; color: #E11D48; }
+
+    .primary-action-btn {
+      width: 100%;
+      padding: 13px;
+      border-radius: 22px;
+      border: none;
+      background: var(--accent-gradient);
+      color: #FFF;
+      font-size: 13.5px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 10px 22px -6px rgba(79, 70, 229, 0.5);
+      margin-top: 8px;
+    }
+
+    .input-box {
+      width: 100%;
+      padding: 11px 13px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border-soft);
+      background: var(--card-surface);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+      outline: none;
+      margin-top: 5px;
+    }
+
+    /* ================= FLOATING BOTTOM NAVIGATION ================= */
+    .bottom-dock {
+      position: fixed;
+      bottom: 10px;
+      left: 14px;
+      right: 14px;
+      max-width: 492px;
+      margin: 0 auto;
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      border: 1.5px solid var(--border-soft);
+      border-radius: 26px;
+      padding: 7px 10px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.14);
       z-index: 40;
     }
-    .b-nav-item {
-      background: transparent; border: none; display: flex; flex-direction: column;
-      align-items: center; gap: 3px; cursor: pointer; color: var(--text-sub);
-      font-size: 10.5px; font-weight: 800; padding: 6px 12px; border-radius: 18px;
-    }
-    .b-nav-item .nav-ico { font-size: 18px; }
-    .b-nav-item.active { background: var(--nav-active-pill); color: var(--nav-active-text); }
 
+    .nav-tab {
+      background: transparent;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      cursor: pointer;
+      color: var(--text-sub);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 6px 12px;
+      border-radius: 16px;
+      transition: all 0.2s;
+    }
+    .nav-tab .ico { font-size: 18px; }
+    .nav-tab.active {
+      background: var(--accent-gradient);
+      color: #FFF;
+      box-shadow: 0 6px 14px -3px rgba(79, 70, 229, 0.45);
+    }
+
+    /* ================= MODAL POPUP ================= */
     .modal-backdrop {
-      position: fixed; inset: 0; background: rgba(15, 23, 42, 0.55);
-      backdrop-filter: blur(5px); z-index: 60; display: none;
-      align-items: center; justify-content: center; padding: 16px;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.62);
+      backdrop-filter: blur(6px);
+      z-index: 70;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
     }
     .modal-backdrop.active { display: flex; }
-    .modal-sheet {
-      background: var(--app-bg); border: 1.5px solid var(--border-soft);
-      border-radius: 28px; width: 100%; max-width: 440px; max-height: 90vh;
-      overflow-y: auto; padding: 18px;
-    }
-    .input-clean {
-      width: 100%; padding: 10px 13px; border-radius: 14px;
-      border: 1.5px solid var(--border-soft); background: var(--card-surface);
-      font-size: 12.5px; font-weight: 700; color: var(--text-main); outline: none; margin-top: 4px;
+
+    .modal-card {
+      background: var(--app-bg);
+      border: 1.5px solid var(--border-soft);
+      border-radius: 28px;
+      width: 100%;
+      max-width: 430px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 18px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+      animation: popIn 0.25s ease;
     }
   </style>
 </head>
-<body data-skin="aqua-pastel">
+<body data-skin="vivid-aurora">
 
+  <!-- ANDROID LOCKED NOTIFICATION STRIP (FOR 1-DAY LEFT INSTALLMENTS) -->
   <div id="lockedNotifStrip" class="locked-notif-strip">
     <div id="notifBannerList"></div>
-    <div id="lockedToastMsg" style="display:none; background:#FEE2E2; color:#991B1B; padding:6px 10px; border-radius:10px; font-size:10.5px; font-weight:800; text-align:center;">
-      🔒 این اعلان قفل است! چون ۱ روز تا سررسید قسط مانده، پاک نمی‌شود. روی «پرداخت کردم» بزنید تا حذف شود.
+    <div id="lockedToastMsg" style="display:none; background:#FFE4E6; color:#9F1239; padding:7px 10px; border-radius:12px; font-size:10.5px; font-weight:900; text-align:center;">
+      🔒 این اعلان قفل است! چون ۱ روز تا سررسید قسط مانده، پاک نمی‌شود. حتماً باید روی «پرداخت کردم» بزنید تا حذف شود.
     </div>
   </div>
 
-  <header class="top-greeting-bar">
-    <div class="profile-greet">
-      <div class="avatar-circle">ت</div>
-      <div class="greet-text">
-        <h1>سلام، روز بخیر! 👋</h1>
-        <p>ژورنال هوشمند دخل، خرج و اقساط</p>
+  <!-- TOP HEADER WITH CUSTOM DESIGNED 3D SVG ICON -->
+  <header class="top-header">
+    <div class="brand-cluster">
+      <div class="app-icon-3d" title="آیکون اختصاصی ترازنگار">
+        <svg width="30" height="30" viewBox="0 0 512 512">
+          <circle cx="256" cy="256" r="190" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="42"/>
+          <path d="M256 66 A190 190 0 1 1 95 355" fill="none" stroke="#FDE047" stroke-width="44" stroke-linecap="round"/>
+          <rect x="170" y="190" width="172" height="132" rx="34" fill="#FFFFFF"/>
+          <circle cx="256" cy="256" r="30" fill="#0284C7"/>
+        </svg>
+      </div>
+      <div class="brand-titles">
+        <h1>ترازنگار</h1>
+        <p>ژورنال هوشمند دخل و خرج، پس‌انداز و اقساط</p>
       </div>
     </div>
-    <div class="top-icon-actions">
-      <button class="icon-circle-btn" onclick="switchScreen('manual', document.getElementById('nav-manual'))">＋</button>
-      <button class="icon-circle-btn" onclick="switchScreen('installments', document.getElementById('nav-inst'))">
+
+    <div class="quick-header-btns">
+      <button class="glass-circle-btn" title="ثبت تراکنش جدید" onclick="switchScreen('manual', document.getElementById('nav-manual'))">＋</button>
+      <button class="glass-circle-btn" title="اقساط و پیامک" onclick="switchScreen('installments', document.getElementById('nav-inst'))">
         🔔
-        <span id="bellDot" class="bell-dot"></span>
+        <span id="bellDot" class="notif-red-dot"></span>
       </button>
     </div>
   </header>
 
-  <div class="skin-switcher-row">
-    <button class="skin-chip active" id="skinBtn-aqua-pastel" onclick="setSkin('aqua-pastel', this)">🎨 ۱. آکوا پاستل</button>
-    <button class="skin-chip" id="skinBtn-warm-olive" onclick="setSkin('warm-olive', this)">🌿 ۲. کرم و زیتونی</button>
-    <button class="skin-chip" id="skinBtn-vivid-glass" onclick="setSkin('vivid-glass', this)">✨ ۳. گرادیان براق</button>
+  <!-- 3 VIVID SKIN SWITCHERS -->
+  <div class="skin-bar">
+    <button class="skin-pill active" id="skinBtn-vivid-aurora" onclick="setSkin('vivid-aurora', this)">✨ گرادیان درخشان</button>
+    <button class="skin-pill" id="skinBtn-aqua-pastel" onclick="setSkin('aqua-pastel', this)">💎 آکوا پاستل</button>
+    <button class="skin-pill" id="skinBtn-warm-royal" onclick="setSkin('warm-royal', this)">🌿 کرم و زیتونی</button>
   </div>
 
-  <div class="phone-content">
+  <!-- MAIN CONTENT AREA -->
+  <main class="content-area">
 
-    <!-- SCREEN 1: DASHBOARD -->
+    <!-- ================= SCREEN 1: DASHBOARD ================= -->
     <section id="screen-dashboard" class="screen-view active">
+      
+      <!-- CHART 1: HERO TOTAL BALANCE + 3D RING DONUT -->
       <div class="hero-balance-card">
-        <div class="hero-balance-info">
-          <div class="lbl">تراز کل قابل خرج:</div>
-          <div class="main-val" id="heroBalanceVal">۰ تومان</div>
-          <div class="hero-mini-stats">
-            <span>🟢 ورودی: <b id="heroIncMini">۰</b></span>
-            <span>🔴 مخارج: <b id="heroExpMini">۰</b></span>
-            <span>🔐 پس‌انداز: <b id="heroSavMini">۰</b></span>
+        <div class="hero-info">
+          <div class="lbl">تراز خالص قابل خرج:</div>
+          <div class="big-amount" id="heroBalanceVal">۰ تومان</div>
+          <div class="hero-badges">
+            <span class="hero-mini-pill">🟢 ورودی: <b id="heroIncMini">۰</b></span>
+            <span class="hero-mini-pill">🔴 مخارج: <b id="heroExpMini">۰</b></span>
+            <span class="hero-mini-pill">🔐 پس‌انداز: <b id="heroSavMini">۰</b></span>
           </div>
         </div>
-        <div class="hero-donut-wrap">
-          <svg id="heroDonutSvg" width="106" height="106" viewBox="0 0 110 110"></svg>
-          <div class="donut-center-tag">
+        <div class="hero-donut-box">
+          <svg id="heroDonutSvg" width="110" height="110" viewBox="0 0 110 110"></svg>
+          <div class="donut-center">
             <span>پس‌انداز</span>
-            <div id="donutSavePct" style="font-size:13px;">۰٪</div>
+            <div id="donutSavePct" style="font-size:14px;">۰٪</div>
           </div>
         </div>
       </div>
 
+      <!-- CHARTS 2 & 3: INCOME & EXPENSE SPLINE WAVE CARDS -->
       <div class="dual-wave-grid">
-        <div class="wave-stat-card income-wave-card" onclick="openTreeOnPillar('income')">
-          <div class="wave-card-top">
-            <div class="w-title">درآمدها و ورودی‌ها</div>
-            <div class="w-amount" id="waveIncomeVal">۰</div>
-            <div class="w-unit">تومان (کلیک = ریز دسته‌ها)</div>
+        <div class="wave-card income" onclick="openTreeOnPillar('income')">
+          <div>
+            <div class="w-label">درآمدها و ورودی‌ها</div>
+            <div class="w-val" id="waveIncomeVal">۰</div>
+            <div class="w-sub">تومان • مشاهده درخت درآمد ↗</div>
           </div>
-          <div class="wave-svg-holder">
+          <div class="wave-art">
             <svg viewBox="0 0 200 65" preserveAspectRatio="none">
-              <path d="M0,52 C25,48 40,28 65,36 C90,44 110,16 135,24 C160,32 175,8 200,14 L200,65 L0,65 Z" fill="var(--income-wave-fill)"></path>
-              <path d="M0,52 C25,48 40,28 65,36 C90,44 110,16 135,24 C160,32 175,8 200,14" fill="none" stroke="var(--income-wave-stroke)" stroke-width="3" stroke-linecap="round"></path>
+              <path d="M0,52 C25,48 40,24 65,34 C90,44 110,14 135,22 C160,30 175,6 200,12 L200,65 L0,65 Z" fill="rgba(255,255,255,0.24)"></path>
+              <path d="M0,52 C25,48 40,24 65,34 C90,44 110,14 135,22 C160,30 175,6 200,12" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round"></path>
             </svg>
-            <span class="wave-pill-tag">افزایشی ↗</span>
           </div>
         </div>
 
-        <div class="wave-stat-card expense-wave-card" onclick="openTreeOnPillar('expense')">
-          <div class="wave-card-top">
-            <div class="w-title">هزینه‌ها و مخارج</div>
-            <div class="w-amount" id="waveExpenseVal">۰</div>
-            <div class="w-unit">تومان (کلیک = ریز دسته‌ها)</div>
+        <div class="wave-card expense" onclick="openTreeOnPillar('expense')">
+          <div>
+            <div class="w-label">هزینه‌ها و مخارج</div>
+            <div class="w-val" id="waveExpenseVal">۰</div>
+            <div class="w-sub">تومان • مشاهده درخت مخارج ↘</div>
           </div>
-          <div class="wave-svg-holder">
+          <div class="wave-art">
             <svg viewBox="0 0 200 65" preserveAspectRatio="none">
-              <path d="M0,45 C30,52 50,20 75,35 C100,50 125,10 150,28 C175,45 185,22 200,30 L200,65 L0,65 Z" fill="var(--expense-wave-fill)"></path>
-              <path d="M0,45 C30,52 50,20 75,35 C100,50 125,10 150,28 C175,45 185,22 200,30" fill="none" stroke="var(--expense-wave-stroke)" stroke-width="3" stroke-linecap="round"></path>
+              <path d="M0,44 C30,52 50,18 75,34 C100,50 125,10 150,28 C175,45 185,20 200,28 L200,65 L0,65 Z" fill="rgba(255,255,255,0.24)"></path>
+              <path d="M0,44 C30,52 50,18 75,34 C100,50 125,10 150,28 C175,45 185,20 200,28" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round"></path>
             </svg>
-            <span class="wave-pill-tag">کاهشی ↘</span>
           </div>
         </div>
       </div>
 
-      <div class="section-head-row">
-        <h2>تراکنش‌های اخیر و دسته‌ها</h2>
-        <span style="font-size:11px; font-weight:800; color:var(--nav-active-text); cursor:pointer;" onclick="switchScreen('tree', document.getElementById('nav-tree'))">
-          نمایش درختی (بیشترین به کمترین) ←
+      <!-- RECENT TRANSACTIONS WITH DELETE BUTTONS -->
+      <div class="section-title-bar">
+        <h2>تراکنش‌های ثبت‌شده</h2>
+        <span style="font-size:11px; font-weight:800; color:var(--accent-primary); cursor:pointer;" onclick="switchScreen('tree', document.getElementById('nav-tree'))">
+          درخت دسته‌ها (بیشترین به کمترین) ←
         </span>
       </div>
 
-      <div class="filter-pills-scroll" id="dashboardFilterPills"></div>
+      <div class="filter-scroll" id="dashboardFilterPills"></div>
       <div id="recentTransactionsList"></div>
+
     </section>
 
-    <!-- SCREEN 2: 3-LEVEL TREE -->
+    <!-- ================= SCREEN 2: 3-LEVEL HIERARCHICAL TREE ================= -->
     <section id="screen-tree" class="screen-view">
-      <div class="section-head-row">
-        <h2>درخت دسته‌بندی‌ها (از بیشترین به کمترین)</h2>
-        <button class="filter-pill active" style="padding:4px 10px; font-size:10.5px;" onclick="switchScreen('settings', document.getElementById('nav-settings'))">
-          + دسته جدید
+      <div class="section-title-bar">
+        <h2>درخت دسته‌ها (از بیشترین به کمترین)</h2>
+        <button class="chip-btn active" style="padding:5px 11px; font-size:10.5px;" onclick="switchScreen('settings', document.getElementById('nav-settings'))">
+          + تعریف دسته جدید
         </button>
       </div>
+      <p style="font-size:11px; color:var(--text-sub); margin-bottom:12px;">
+        روی هر بخش بزنید تا دسته‌ها <strong>از پرخرج‌ترین تا کم‌خرج‌ترین</strong> باز شوند. در لایه سوم می‌توانید ریزِ هر تراکنش را ببینید یا با دکمه 🗑️ حذفش کنید.
+      </p>
       <div id="hierarchicalTreeMount"></div>
     </section>
 
-    <!-- SCREEN 3: INSTALLMENTS & SMS -->
+    <!-- ================= SCREEN 3: INSTALLMENTS & SMS ================= -->
     <section id="screen-installments" class="screen-view">
-      <div class="section-head-row">
-        <h2>اقساط ماهیانه و یادآورها</h2>
-        <button class="filter-pill active" style="padding:4px 10px; font-size:10.5px;" onclick="toggleAddInstallmentBox()">
+      <div class="section-title-bar">
+        <h2>اقساط ماهیانه و یادآور قفل‌شونده</h2>
+        <button class="chip-btn active" style="padding:5px 11px; font-size:10.5px;" onclick="toggleAddInstallmentBox()">
           + ثبت قسط جدید
         </button>
       </div>
 
-      <div id="addInstallmentBox" style="display:none; background:var(--card-surface); border:1.5px solid var(--border-soft); border-radius:22px; padding:14px; margin-bottom:14px;">
-        <h4 style="font-size:13px; font-weight:900; margin-bottom:8px;">افزودن قسط ماهیانه جدید</h4>
-        <input type="text" id="newInstTitle" class="input-clean" placeholder="عنوان قسط (مثلاً: وام قرض‌الحسنه مهر ایران)" />
+      <!-- Add New Installment Form -->
+      <div id="addInstallmentBox" style="display:none; background:var(--card-surface); border:1.5px solid var(--border-soft); border-radius:24px; padding:16px; margin-bottom:14px;">
+        <h4 style="font-size:13.5px; font-weight:900; margin-bottom:8px;">افزودن قسط ماهیانه جدید</h4>
+        <input type="text" id="newInstTitle" class="input-box" placeholder="عنوان قسط (مثلاً: وام قرض‌الحسنه مهر ایران)" />
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:6px;">
-          <input type="number" id="newInstAmount" class="input-clean" placeholder="مبلغ (تومان) مثلاً 3400000" />
-          <input type="text" id="newInstBank" class="input-clean" placeholder="نام بانک" />
+          <input type="number" id="newInstAmount" class="input-box" placeholder="مبلغ هر قسط (تومان)" />
+          <input type="text" id="newInstBank" class="input-box" placeholder="نام بانک" />
         </div>
         <div style="margin-top:6px;">
-          <select id="newInstDaysLeft" class="input-clean">
-            <option value="1">🚨 ۱ روز مانده به موعد (اعلان قفل‌شونده و پاک‌نشدنی)</option>
-            <option value="6">⚠️ ۶ روز مانده به موعد (یادآوری یک هفته قبل)</option>
-            <option value="18">🗓️ ۱۸ روز مانده به موعد</option>
+          <select id="newInstDaysLeft" class="input-box">
+            <option value="1">🚨 ۱ روز مانده به سررسید (اعلان قفل‌شونده در لیست اعلان!)</option>
+            <option value="6">⚠️ ۶ روز مانده به سررسید (یادآور یک هفته قبل)</option>
+            <option value="15">🗓️ ۱۵ روز مانده به سررسید</option>
           </select>
         </div>
-        <button class="send-sms-pill-btn" style="margin-top:10px; padding:10px;" onclick="saveNewInstallment()">
-          ثبت قسط و فعال‌سازی اعلان
+        <button class="primary-action-btn" onclick="saveNewInstallment()">
+          ذخیره قسط و فعال‌سازی اعلان
         </button>
       </div>
 
       <div id="installmentCardsMount"></div>
 
-      <div class="section-head-row" style="margin-top:18px;">
-        <h2>ثبت از روی متن پیامک بانکی</h2>
+      <!-- Bank SMS Parser Box -->
+      <div style="background:var(--card-surface); border:1.5px solid var(--border-soft); border-radius:24px; padding:16px; margin-top:16px;">
+        <h3 style="font-size:13.5px; font-weight:900; margin-bottom:4px;">📩 ثبت خودکار از روی پیامک بانک</h3>
+        <p style="font-size:11px; color:var(--text-sub); margin-bottom:8px;">
+          در اندروید با رسیدن پیامک بانکی، پنجره ثبت خودکار باز می‌شود. همچنین می‌توانید متن هر پیامک بانکی را در کادر زیر قرار دهید تا تبدیل ریال به تومان و پاپ‌آپ را تست کنید:
+        </p>
+        <textarea id="customSmsTextarea" rows="3" class="input-box" placeholder="متن پیامک بانک را اینجا بنویسید یا الصاق کنید..."></textarea>
+        <button class="primary-action-btn" onclick="triggerCustomSmsFromInput()">
+          پردازش پیامک و باز کردن پنجره ثبت
+        </button>
       </div>
-      <textarea id="customSmsTextarea" rows="3" class="input-clean" placeholder="متن پیامک بانک را اینجا الصاق کنید یا منتظر دریافت خودکار پیامک باشید..."></textarea>
-      <button class="send-sms-pill-btn" onclick="triggerCustomSmsFromInput()">
-        پردازش پیامک و باز کردن پنجره ثبت
-      </button>
     </section>
 
-    <!-- SCREEN 4: MANUAL ENTRY & SAVINGS -->
+    <!-- ================= SCREEN 4: MANUAL ENTRY & SAVINGS ================= -->
     <section id="screen-manual" class="screen-view">
-      <div class="section-head-row">
-        <h2>ثبت دستی تراکنش و پس‌انداز</h2>
+      <div class="section-title-bar">
+        <h2>ثبت تراکنش جدید و پس‌انداز</h2>
       </div>
 
-      <div style="background:var(--card-surface); border:1px solid var(--border-soft); border-radius:24px; padding:16px; margin-bottom:14px;">
+      <div style="background:var(--card-surface); border:1.5px solid var(--border-soft); border-radius:26px; padding:16px; margin-bottom:14px;">
         <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-bottom:12px;">
-          <button class="filter-pill active" id="mBtn-expense" onclick="setManualPillar('expense')">🔴 هزینه</button>
-          <button class="filter-pill" id="mBtn-income" onclick="setManualPillar('income')">🟢 درآمد</button>
-          <button class="filter-pill" id="mBtn-saving" onclick="setManualPillar('saving')">🔐 پس‌انداز</button>
-          <button class="filter-pill" id="mBtn-transfer" onclick="setManualPillar('transfer')">🔄 انتقال خودی</button>
+          <button class="chip-btn active" id="mBtn-expense" onclick="setManualPillar('expense')">🔴 ثبت هزینه</button>
+          <button class="chip-btn" id="mBtn-income" onclick="setManualPillar('income')">🟢 ثبت درآمد</button>
+          <button class="chip-btn" id="mBtn-saving" onclick="setManualPillar('saving')">🔐 ثبت پس‌انداز</button>
+          <button class="chip-btn" id="mBtn-transfer" onclick="setManualPillar('transfer')">🔄 انتقال خودی</button>
         </div>
 
-        <label style="font-size:11px; font-weight:800;">مبلغ تراکنش (تومان):</label>
-        <input type="number" id="mAmountInput" class="input-clean" placeholder="مثلاً 850000" />
-
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px;">
-          <label style="font-size:11px; font-weight:800;">دسته‌بندی:</label>
-          <span style="font-size:10.5px; font-weight:800; color:var(--nav-active-text); cursor:pointer;" onclick="switchScreen('settings', document.getElementById('nav-settings'))">+ ساخت دسته جدید</span>
+        <label style="font-size:11.5px; font-weight:800;">مبلغ (به تومان):</label>
+        <input type="number" id="mAmountInput" class="input-box" placeholder="مثلاً 450000" />
+        <div style="display:flex; gap:6px; margin-top:6px;">
+          <button type="button" class="chip-btn" style="flex:1; font-size:10.5px;" onclick="appendZeros('000')">+ سه صفر (هزار)</button>
+          <button type="button" class="chip-btn" style="flex:1; font-size:10.5px;" onclick="appendZeros('000000')">+ شش صفر (میلیون)</button>
         </div>
-        <select id="mCategorySelect" class="input-clean"></select>
 
-        <label style="font-size:11px; font-weight:800; display:block; margin-top:10px;">عنوان و توضیح ریز:</label>
-        <input type="text" id="mTitleInput" class="input-clean" placeholder="مثلاً: خرید پروتئین و لبنیات" />
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
+          <label style="font-size:11.5px; font-weight:800;">انتخاب دسته‌بندی:</label>
+          <span style="font-size:11px; font-weight:900; color:var(--accent-primary); cursor:pointer;" onclick="promptNewCategoryDirect()">+ ساخت دسته جدید</span>
+        </div>
+        <select id="mCategorySelect" class="input-box"></select>
 
-        <button class="send-sms-pill-btn" style="margin-top:14px;" onclick="submitManualTx()">
-          ثبت در برنامه
+        <label style="font-size:11.5px; font-weight:800; display:block; margin-top:12px;">عنوان و توضیح:</label>
+        <input type="text" id="mTitleInput" class="input-box" placeholder="مثلاً: خرید نان و لبنیات، واریز حقوق..." />
+
+        <label style="font-size:11.5px; font-weight:800; display:block; margin-top:12px;">نام بانک یا حساب:</label>
+        <input type="text" id="mBankInput" class="input-box" placeholder="مثلاً: بانک ملی، مهر ایران، نقد..." />
+
+        <button class="primary-action-btn" style="margin-top:14px;" onclick="submitManualTx()">
+          ✅ ثبت در برنامه
         </button>
       </div>
 
-      <div style="background:var(--card-surface); border:1.5px solid var(--border-soft); border-radius:24px; padding:16px;">
+      <!-- Mandatory Monthly Savings Rule -->
+      <div style="background:var(--card-surface); border:1.5px solid var(--border-soft); border-radius:26px; padding:16px;">
         <h3 style="font-size:14px; font-weight:900; margin-bottom:4px;">🏺 قانون پس‌انداز اجباری ماهانه</h3>
         <p style="font-size:11px; color:var(--text-sub); margin-bottom:10px;">
-          حتی در شرایط سخت مالی، پس‌انداز ماهانه صفر نمی‌شود:
+          حتی در شرایط سخت مالی، پس‌انداز ماهانه صفر نمی‌شود. درصد کسر خودکار از ورودی‌ها:
         </p>
         <div style="display:flex; gap:6px;">
-          <button class="filter-pill active" id="sMode-15" style="flex:1;" onclick="setSavingRate(15, this)">عادی (۱۵٪)</button>
-          <button class="filter-pill" id="sMode-5" style="flex:1;" onclick="setSavingRate(5, this)">تحت فشار (۵٪)</button>
-          <button class="filter-pill" id="sMode-2" style="flex:1;" onclick="setSavingRate(2, this)">شرایط سخت (۲٪)</button>
+          <button class="chip-btn active" id="sMode-15" style="flex:1;" onclick="setSavingRate(15, this)">عادی (۱۵٪)</button>
+          <button class="chip-btn" id="sMode-5" style="flex:1;" onclick="setSavingRate(5, this)">تحت فشار (۵٪)</button>
+          <button class="chip-btn" id="sMode-2" style="flex:1;" onclick="setSavingRate(2, this)">شرایط سخت (۲٪)</button>
         </div>
       </div>
     </section>
 
-    <!-- SCREEN 5: SETTINGS & CUSTOM CATEGORIES -->
+    <!-- ================= SCREEN 5: SETTINGS, CATEGORIES & DELETE ALL ================= -->
     <section id="screen-settings" class="screen-view">
-      <div class="section-head-row">
-        <h2>تعریف دسته‌بندی‌ها، سرشماره‌ها و مدیریت داده‌ها</h2>
+      <div class="section-title-bar">
+        <h2>مدیریت دسته‌بندی‌ها و بانک‌ها</h2>
       </div>
 
-      <div style="background:var(--card-surface); border:1px solid var(--border-soft); border-radius:24px; padding:16px; margin-bottom:14px;">
-        <h4 style="font-size:13px; font-weight:900; margin-bottom:8px;">🏷️ افزودن دسته‌بندی شخصی</h4>
+      <!-- Add / Delete Categories -->
+      <div style="background:var(--card-surface); border:1.5px solid var(--border-soft); border-radius:26px; padding:16px; margin-bottom:14px;">
+        <h4 style="font-size:13.5px; font-weight:900; margin-bottom:8px;">🏷️ تعریف یا حذف دسته‌بندی‌ها</h4>
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-          <select id="setCatPillar" class="input-clean" onchange="renderSettingsCategories()">
-            <option value="expense">🔴 هزینه‌ها</option>
-            <option value="income">🟢 درآمدها</option>
-            <option value="saving">🔐 پس‌انداز</option>
-            <option value="transfer">🔄 انتقال خودی</option>
+          <select id="setCatPillar" class="input-box" onchange="renderSettingsCategories()">
+            <option value="expense">🔴 دسته‌های هزینه</option>
+            <option value="income">🟢 دسته‌های درآمد</option>
+            <option value="saving">🔐 دسته‌های پس‌انداز</option>
+            <option value="transfer">🔄 دسته‌های انتقال</option>
           </select>
-          <select id="setCatEmoji" class="input-clean">
-            <option value="🏠">🏠 مسکن</option>
-            <option value="🛒">🛒 خوراکی</option>
-            <option value="🚗">🚗 خودرو</option>
-            <option value="📅">📅 اقساط</option>
-            <option value="🏋️">🏋️ ورزش و سلامت</option>
+          <select id="setCatEmoji" class="input-box">
+            <option value="🛒">🛒 خرید و خوراکی</option>
+            <option value="🏠">🏠 مسکن و قبوض</option>
+            <option value="🚗">🚗 خودرو و رفت‌وآمد</option>
+            <option value="📅">📅 قسط و وام</option>
+            <option value="🏥">🏥 سلامت و ورزش</option>
+            <option value="💼">💼 حقوق و کار</option>
             <option value="🎓">🎓 آموزش</option>
             <option value="🛠️">🛠️ تعمیرات</option>
             <option value="🎁">🎁 هدیه</option>
           </select>
         </div>
         <div style="display:flex; gap:8px; margin-top:8px;">
-          <input type="text" id="setNewCatName" class="input-clean" placeholder="نام دسته جدید..." style="margin-top:0;" />
-          <button class="pill-action-btn pill-pay" style="white-space:nowrap;" onclick="addCustomCategory()">+ افزودن</button>
+          <input type="text" id="setNewCatName" class="input-box" placeholder="نام دسته‌بندی جدید..." style="margin-top:0;" />
+          <button class="pill-btn pay" style="white-space:nowrap; padding:0 16px;" onclick="addCustomCategory()">+ افزودن</button>
         </div>
 
-        <div id="settingsCatList" style="display:flex; flex-wrap:wrap; gap:6px; margin-top:12px;"></div>
+        <p style="font-size:10.5px; color:var(--text-sub); margin-top:12px; margin-bottom:6px;">
+          برای حذف هر دسته‌بندی، روی علامت 🗑️ کنار آن بزنید:
+        </p>
+        <div id="settingsCatList" style="display:flex; flex-wrap:wrap; gap:7px;"></div>
       </div>
 
-      <div style="background:var(--card-surface); border:1px solid var(--border-soft); border-radius:24px; padding:16px; margin-bottom:14px;">
-        <h4 style="font-size:13px; font-weight:900; margin-bottom:6px;">🧹 شروع از صفر (پاک کردن داده‌های نمونه)</h4>
-        <p style="font-size:11px; color:var(--text-sub); margin-bottom:10px;">
-          برای شروع ثبت اطلاعات واقعی خودتان (یا هنگام دادن برنامه به فرد دیگر)، می‌توانید تراکنش‌های پیش‌فرض را پاک کنید:
+      <!-- Custom Bank Senders -->
+      <div style="background:var(--card-surface); border:1.5px solid var(--border-soft); border-radius:26px; padding:16px; margin-bottom:14px;">
+        <h4 style="font-size:13.5px; font-weight:900; margin-bottom:6px;">🏦 سرشماره‌های پیامک بانک</h4>
+        <p style="font-size:11px; color:var(--text-sub); margin-bottom:8px;">
+          تشخیص هوشمند تمام بانک‌های ایران فعال است. اگر سرشماره خاصی هم مد نظرتان است اضافه کنید:
         </p>
-        <button class="pill-action-btn pill-del" style="width:100%;" onclick="clearAllDemoData()">
-          پاک کردن تراکنش‌های نمونه و شروع از صفر
+        <div style="display:flex; gap:8px;">
+          <input type="text" id="newSenderInput" class="input-box" placeholder="مثلاً +98200040" style="margin-top:0;" />
+          <button class="pill-btn pay" style="white-space:nowrap; padding:0 16px;" onclick="addSenderNumber()">ثبت</button>
+        </div>
+        <div id="senderNumbersList" style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;"></div>
+      </div>
+
+      <!-- Reset / Clear All Data -->
+      <div style="background:var(--card-surface); border:1.5px solid var(--border-soft); border-radius:26px; padding:16px;">
+        <h4 style="font-size:13.5px; font-weight:900; color:#E11D48; margin-bottom:6px;">🗑️ پاک‌سازی کل اطلاعات برنامه</h4>
+        <p style="font-size:11px; color:var(--text-sub); margin-bottom:10px;">
+          اگر می‌خواهید تمام تراکنش‌ها و اقساط ثبت‌شده را یک‌جا حذف کنید و برنامه را صفر کنید:
+        </p>
+        <button class="pill-btn del" style="width:100%; padding:12px;" onclick="wipeAllAppData()">
+          حذف تمام تراکنش‌ها و اقساط
         </button>
       </div>
     </section>
 
-  </div>
+  </main>
 
-  <nav class="bottom-nav-bar">
-    <button class="b-nav-item active" id="nav-dash" onclick="switchScreen('dashboard', this)">
-      <span class="nav-ico">⊞</span>
+  <!-- FLOATING BOTTOM NAVIGATION -->
+  <nav class="bottom-dock">
+    <button class="nav-tab active" id="nav-dash" onclick="switchScreen('dashboard', this)">
+      <span class="ico">📊</span>
       <span>داشبورد</span>
     </button>
-    <button class="b-nav-item" id="nav-tree" onclick="switchScreen('tree', this)">
-      <span class="nav-ico">🗂️</span>
+    <button class="nav-tab" id="nav-tree" onclick="switchScreen('tree', this)">
+      <span class="ico">🗂️</span>
       <span>درخت دسته‌ها</span>
     </button>
-    <button class="b-nav-item" id="nav-inst" onclick="switchScreen('installments', this)">
-      <span class="nav-ico">💬</span>
-      <span>پیامک و اقساط</span>
+    <button class="nav-tab" id="nav-inst" onclick="switchScreen('installments', this)">
+      <span class="ico">📅</span>
+      <span>اقساط و پیامک</span>
     </button>
-    <button class="b-nav-item" id="nav-manual" onclick="switchScreen('manual', this)">
-      <span class="nav-ico">＋</span>
-      <span>ثبت و پس‌انداز</span>
+    <button class="nav-tab" id="nav-manual" onclick="switchScreen('manual', this)">
+      <span class="ico">➕</span>
+      <span>ثبت جدید</span>
     </button>
-    <button class="b-nav-item" id="nav-settings" onclick="switchScreen('settings', this)">
-      <span class="nav-ico">⚙️</span>
+    <button class="nav-tab" id="nav-settings" onclick="switchScreen('settings', this)">
+      <span class="ico">⚙️</span>
       <span>تنظیمات</span>
     </button>
   </nav>
 
-  <!-- FLOATING POPUP WHEN BANK SMS ARRIVES -->
+  <!-- FLOATING AUTO POPUP WHEN BANK SMS ARRIVES -->
   <div id="smsPopupModal" class="modal-backdrop">
-    <div class="modal-sheet">
+    <div class="modal-card">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-        <strong style="font-size:14px;">⚡ ثبت خودکار پیامک بانکی</strong>
-        <span id="modalTypeBadge" class="status-chip rose">برداشت</span>
+        <strong style="font-size:14px;">⚡ ثبت آنی تراکنش بانکی</strong>
+        <span id="modalTypeBadge" style="padding:3px 10px; border-radius:10px; font-size:11px; font-weight:900;">برداشت</span>
       </div>
 
-      <div style="background:var(--card-surface); border:1px solid var(--border-soft); border-radius:18px; padding:12px; text-align:center; margin-bottom:10px;">
-        <div style="font-size:11px; color:var(--text-sub);" id="modalBankTitle">بانک</div>
-        <div style="font-size:21px; font-weight:900; margin:3px 0;" id="modalAmountVal">۰ تومان</div>
+      <div style="background:var(--card-surface); border:1.5px solid var(--border-soft); border-radius:20px; padding:14px; text-align:center; margin-bottom:12px;">
+        <div style="font-size:11.5px; color:var(--text-sub); font-weight:700;" id="modalBankTitle">بانک</div>
+        <div style="font-size:23px; font-weight:900; margin:4px 0; color:var(--text-main);" id="modalAmountVal">۰ تومان</div>
         <label style="display:flex; align-items:center; justify-content:center; gap:6px; font-size:11px; font-weight:800; color:#059669; margin-top:6px; cursor:pointer;">
-          <input type="checkbox" id="modalAutoSaveCheck" checked />
-          <span id="modalAutoSaveText">انتقال خودکار به پس‌انداز</span>
+          <input type="checkbox" id="modalAutoSaveCheck" checked style="width:16px; height:16px;" />
+          <span id="modalAutoSaveText">کسر خودکار سهم پس‌انداز ماهانه</span>
         </label>
       </div>
 
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-        <span style="font-size:11.5px; font-weight:800;">انتخاب دسته‌بندی:</span>
-        <span style="font-size:10.5px; font-weight:800; color:var(--nav-active-text); cursor:pointer;" onclick="promptNewCategoryInline()">+ دسته جدید</span>
+        <span style="font-size:11.5px; font-weight:800;">۱. انتخاب دسته‌بندی:</span>
+        <span style="font-size:11px; font-weight:900; color:var(--accent-primary); cursor:pointer;" onclick="promptNewCategoryInline()">+ دسته جدید</span>
       </div>
       <div id="modalCategoryPills" style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;"></div>
 
-      <input type="text" id="modalNoteInput" class="input-clean" placeholder="عنوان تراکنش (مثلاً: خرید سوپرمارکت، قسط...)" />
+      <label style="font-size:11.5px; font-weight:800;">۲. عنوان و توضیح تراکنش:</label>
+      <input type="text" id="modalNoteInput" class="input-box" placeholder="مثلاً: خرید سوپرمارکت، واریز حقوق، قسط..." />
 
-      <div class="inst-dual-buttons" style="margin-top:12px;">
-        <button class="pill-action-btn pill-pay" onclick="confirmSmsModal()">ثبت تراکنش</button>
-        <button class="pill-action-btn pill-del" onclick="closeSmsModal()">بستن</button>
+      <div class="inst-btn-row" style="margin-top:14px;">
+        <button class="pill-btn pay" onclick="confirmSmsModal()">✅ ثبت تراکنش</button>
+        <button class="pill-btn del" onclick="closeSmsModal()">انصراف</button>
       </div>
     </div>
   </div>
 
 <script>
+  // ================= 100% CLEAN & RAW INITIAL STATE (NO JUNK DATA!) =================
   const DEFAULT_CATEGORIES = {
-    expense: ['🏠 مسکن، اجاره و قبوض', '📅 پرداخت شارژ و اقساط ماهانه', '🛒 خوراکی و سوپرمارکت', '🚗 خودرو و سوخت', '🏥 سلامت و ورزش'],
-    income: ['💼 حقوق و دستمزد اصلی', '📈 پروژه و درآمد جانبی', '🎁 سود و پاداش'],
-    saving: ['🔐 پس‌انداز تعهدی ماهانه', '🪙 قلک خرده‌پول‌ها'],
+    expense: ['🛒 خوراکی و سوپرمارکت', '🏠 مسکن، اجاره و قبوض', '📅 اقساط و بدهی ماهانه', '🚗 خودرو و رفت‌وآمد', '🏥 سلامت و درمان'],
+    income: ['💼 حقوق و دستمزد', '📈 درآمد پروژه و کار', '🎁 پاداش و واریزی'],
+    saving: ['🔐 پس‌انداز تعهدی ماهانه', '🪙 قلک خرده‌پول خریدها'],
     transfer: ['🔄 کارت به کارت بین حساب‌های خودم']
   };
 
-  const DEFAULT_TX = [
-    { id: 1, pillar: 'income', category: '💼 حقوق و دستمزد اصلی', title: 'واریز حقوق و مزایای ماهانه', amount: 32000000, bank: 'بانک ملی ایران', date: '۱۴۰۵/۰۸/۰۱', status: 'پرداخت شده', icon: '💼', bg: '#D1FAE5' },
-    { id: 2, pillar: 'income', category: '📈 پروژه و درآمد جانبی', title: 'تسویه حق‌الزحمه پروژه', amount: 7800000, bank: 'بلوبانک سامان', date: '۱۴۰۵/۰۸/۰۳', status: 'پرداخت شده', icon: '📈', bg: '#E0F2FE' },
-    { id: 3, pillar: 'expense', category: '🏠 مسکن، اجاره و قبوض', title: 'مسکن، اجاره و قبوض', amount: 9800000, bank: 'بانک مسکن', date: '۱۴۰۵/۰۸/۰۲', status: 'پرداخت شده', icon: '🏠', bg: '#D1FAE5' },
-    { id: 4, pillar: 'expense', category: '📅 پرداخت شارژ و اقساط ماهانه', title: 'پرداخت شارژ و قبوض ماهانه', amount: 2800000, bank: 'بانک صادرات ایران', date: '۱۴۰۵/۰۸/۰۴', status: 'تراکنش پیامکی', icon: '🧾', bg: '#FEF3C7' },
-    { id: 5, pillar: 'expense', category: '🛒 خوراکی و سوپرمارکت', title: 'خرید پروتئین و مایحتاج ماهانه', amount: 1790000, bank: 'بانک ملت', date: '۱۴۰۵/۰۸/۰۵', status: 'پرداخت شده', icon: '🛒', bg: '#FFE4E6' },
-    { id: 6, pillar: 'saving', category: '🔐 پس‌انداز تعهدی ماهانه', title: 'کسر خودکار پس‌انداز اول ماه', amount: 7650000, bank: 'گاوصندوق تعهد', date: '۱۴۰۵/۰۸/۰۱', status: 'قفل شده', icon: '🔐', bg: '#EDE9FE' }
-  ];
+  if (!localStorage.getItem('taraz_v4_clean_initialized')) {
+    localStorage.removeItem('taraz_prod_tx');
+    localStorage.removeItem('taraz_prod_inst');
+    localStorage.setItem('taraz_v4_clean_initialized', 'true');
+  }
 
-  const DEFAULT_INST = [
-    {
-      id: 501,
-      title: 'موعد فردا: وام قرض‌الحسنه',
-      subtitle: 'مبلغ ۳,۴۰۰,۰۰۰ تومان • بانک قرض‌الحسنه مهر ایران (۱ روز مانده)',
-      amount: 3400000,
-      bank: 'بانک مهر ایران',
-      daysLeft: 1,
-      paid: false,
-      dismissed: false
-    },
-    {
-      id: 502,
-      title: 'پرداخت قسط تسهیلات بانک ملی',
-      subtitle: 'مبلغ ۲,۱۵۰,۰۰۰ تومان • یادآور ۶ روز مانده به موعد',
-      amount: 2150000,
-      bank: 'بانک ملی ایران',
-      daysLeft: 6,
-      paid: false,
-      dismissed: false
-    }
-  ];
+  let CATEGORIES = JSON.parse(localStorage.getItem('taraz_v4_cats')) || DEFAULT_CATEGORIES;
+  let transactions = JSON.parse(localStorage.getItem('taraz_v4_tx')) || [];
+  let installments = JSON.parse(localStorage.getItem('taraz_v4_inst')) || [];
+  let senderNumbers = JSON.parse(localStorage.getItem('taraz_v4_senders')) || [];
 
-  let CATEGORIES = JSON.parse(localStorage.getItem('taraz_prod_cats')) || DEFAULT_CATEGORIES;
-  let transactions = JSON.parse(localStorage.getItem('taraz_prod_tx')) || DEFAULT_TX;
-  let installments = JSON.parse(localStorage.getItem('taraz_prod_inst')) || DEFAULT_INST;
-
-  function persistState() {
-    localStorage.setItem('taraz_prod_cats', JSON.stringify(CATEGORIES));
-    localStorage.setItem('taraz_prod_tx', JSON.stringify(transactions));
-    localStorage.setItem('taraz_prod_inst', JSON.stringify(installments));
+  function saveState() {
+    localStorage.setItem('taraz_v4_cats', JSON.stringify(CATEGORIES));
+    localStorage.setItem('taraz_v4_tx', JSON.stringify(transactions));
+    localStorage.setItem('taraz_v4_inst', JSON.stringify(installments));
+    localStorage.setItem('taraz_v4_senders', JSON.stringify(senderNumbers));
     syncAndroidNativeNotifications();
   }
 
@@ -703,13 +1120,12 @@
     }
   }
 
-  // Called directly by Native Android BroadcastReceiver when real Bank SMS arrives!
   window.onRealBankSmsReceived = function(rawSmsText) {
     openSmsModalFromText(rawSmsText);
   };
 
   let activeFilter = 'همه';
-  let openTreePillars = { expense: true, income: false, saving: false, transfer: false };
+  let openTreePillars = { expense: true, income: true, saving: false, transfer: false };
   let openTreeCats = {};
   let currentManualPillar = 'expense';
   let savingRatePct = 15;
@@ -720,8 +1136,8 @@
 
   function setSkin(skinName, btn) {
     document.body.setAttribute('data-skin', skinName);
-    localStorage.setItem('taraz_prod_skin', skinName);
-    document.querySelectorAll('.skin-chip').forEach(b => b.classList.remove('active'));
+    localStorage.setItem('taraz_v4_skin', skinName);
+    document.querySelectorAll('.skin-pill').forEach(b => b.classList.remove('active'));
     if (btn) btn.classList.add('active');
     renderAll();
   }
@@ -729,7 +1145,7 @@
   function switchScreen(screenId, navBtn) {
     document.querySelectorAll('.screen-view').forEach(s => s.classList.remove('active'));
     document.getElementById('screen-' + screenId).classList.add('active');
-    document.querySelectorAll('.b-nav-item').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
     if (navBtn) navBtn.classList.add('active');
   }
 
@@ -746,9 +1162,9 @@
 
     const netFree = Math.max(0, totals.income - totals.expense - totals.saving);
     document.getElementById('heroBalanceVal').textContent = fmt(netFree) + ' تومان';
-    document.getElementById('heroIncMini').textContent = toFa((totals.income / 1000000).toFixed(1)) + ' م';
-    document.getElementById('heroExpMini').textContent = toFa((totals.expense / 1000000).toFixed(1)) + ' م';
-    document.getElementById('heroSavMini').textContent = toFa((totals.saving / 1000000).toFixed(1)) + ' م';
+    document.getElementById('heroIncMini').textContent = fmt(totals.income);
+    document.getElementById('heroExpMini').textContent = fmt(totals.expense);
+    document.getElementById('heroSavMini').textContent = fmt(totals.saving);
 
     document.getElementById('waveIncomeVal').textContent = fmt(totals.income);
     document.getElementById('waveExpenseVal').textContent = fmt(totals.expense);
@@ -757,96 +1173,119 @@
     document.getElementById('donutSavePct').textContent = toFa(savePct) + '٪';
 
     renderHeroDonut(totals);
-    renderDashboardList();
+    renderDashboardTransactions();
     renderThreeLevelTree(totals);
     renderInstallmentsAndNotifs();
     renderSettingsCategories();
+    renderSendersList();
   }
 
   function renderHeroDonut(totals) {
     const svg = document.getElementById('heroDonutSvg');
-    const sum = totals.income + totals.expense + totals.saving || 1;
+    const sum = totals.income + totals.expense + totals.saving;
     const rOut = 42, rIn = 30;
     const cOut = 2 * Math.PI * rOut;
     const cIn = 2 * Math.PI * rIn;
 
-    const skin = document.body.getAttribute('data-skin');
-    const colors = skin === 'warm-olive'
-      ? ['#738458', '#B86B52', '#D4A359']
-      : skin === 'vivid-glass'
-      ? ['#34D399', '#F472B6', '#A78BFA']
-      : ['#10B981', '#F43F5E', '#6366F1'];
-
-    const segs = [
-      { val: totals.income, col: colors[0] },
-      { val: totals.expense, col: colors[1] },
-      { val: totals.saving, col: colors[2] }
-    ];
-
     let html = `
-      <circle cx="55" cy="55" r="${rOut}" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="11"/>
-      <circle cx="55" cy="55" r="${rIn}" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="8"/>
+      <circle cx="55" cy="55" r="${rOut}" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="11"/>
+      <circle cx="55" cy="55" r="${rIn}" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="8"/>
     `;
 
-    let offset = 0;
-    segs.forEach(s => {
-      const dash = (s.val / sum) * cOut;
-      html += `
-        <circle cx="55" cy="55" r="${rOut}" fill="none" stroke="${s.col}"
-          stroke-width="11" stroke-linecap="round"
-          stroke-dasharray="${Math.max(0, dash - 4)} ${cOut}"
-          stroke-dashoffset="${-offset}"
-          transform="rotate(-90 55 55)"/>
-      `;
-      offset += dash;
-    });
+    if (sum > 0) {
+      const segs = [
+        { val: totals.income, col: '#34D399' },
+        { val: totals.expense, col: '#FB7185' },
+        { val: totals.saving, col: '#FDE047' }
+      ];
+      let offset = 0;
+      segs.forEach(s => {
+        if (s.val <= 0) return;
+        const dash = (s.val / sum) * cOut;
+        html += `
+          <circle cx="55" cy="55" r="${rOut}" fill="none" stroke="${s.col}"
+            stroke-width="11" stroke-linecap="round"
+            stroke-dasharray="${Math.max(2, dash - 4)} ${cOut}"
+            stroke-dashoffset="${-offset}"
+            transform="rotate(-90 55 55)"/>
+        `;
+        offset += dash;
+      });
 
-    const saveDash = Math.min(cIn, (totals.saving / (totals.income || 1)) * cIn);
-    html += `
-      <circle cx="55" cy="55" r="${rIn}" fill="none" stroke="${colors[2]}"
-        stroke-width="8" stroke-linecap="round"
-        stroke-dasharray="${saveDash} ${cIn}"
-        transform="rotate(-90 55 55)"/>
-    `;
+      const saveDash = Math.min(cIn, (totals.saving / (totals.income || 1)) * cIn);
+      if (saveDash > 0) {
+        html += `
+          <circle cx="55" cy="55" r="${rIn}" fill="none" stroke="#FDE047"
+            stroke-width="8" stroke-linecap="round"
+            stroke-dasharray="${saveDash} ${cIn}"
+            transform="rotate(-90 55 55)"/>
+        `;
+      }
+    }
     svg.innerHTML = html;
   }
 
-  function renderDashboardList() {
-    const filters = ['همه', 'مسکن', 'اقساط', 'خوراکی', 'درآمدها', 'پس‌انداز'];
+  function renderDashboardTransactions() {
+    const filters = ['همه', 'هزینه‌ها', 'درآمدها', 'پس‌انداز'];
     document.getElementById('dashboardFilterPills').innerHTML = filters.map(f => `
-      <button class="filter-pill ${activeFilter === f ? 'active' : ''}" onclick="setDashFilter('${f}')">${f}</button>
+      <button class="chip-btn ${activeFilter === f ? 'active' : ''}" onclick="setDashFilter('${f}')">${f}</button>
     `).join('');
 
     const filtered = transactions.filter(t => {
       if (activeFilter === 'همه') return true;
+      if (activeFilter === 'هزینه‌ها') return t.pillar === 'expense';
       if (activeFilter === 'درآمدها') return t.pillar === 'income';
       if (activeFilter === 'پس‌انداز') return t.pillar === 'saving';
-      return t.category.includes(activeFilter) || t.title.includes(activeFilter);
+      return true;
     }).slice().reverse();
 
+    const mount = document.getElementById('recentTransactionsList');
     if (filtered.length === 0) {
-      document.getElementById('recentTransactionsList').innerHTML = `<div style="text-align:center; padding:24px; color:var(--text-sub); font-size:12px;">هنوز تراکنشی ثبت نشده است.</div>`;
+      mount.innerHTML = `
+        <div class="empty-alive-box">
+          <div class="empty-orb">✨</div>
+          <h3 style="font-size:14.5px; font-weight:900; margin-bottom:4px;">برنامه کاملاً خام و آماده شروع است!</h3>
+          <p style="font-size:11.5px; color:var(--text-sub); line-height:1.6; margin-bottom:12px;">
+            هیچ اطلاعات اضافه‌ای وجود ندارد. اولین درآمد یا هزینه خود را ثبت کنید یا منتظر دریافت پیامک بانک بمانید.
+          </p>
+          <button class="primary-action-btn" style="max-width:220px; margin:0 auto; padding:10px;" onclick="switchScreen('manual', document.getElementById('nav-manual'))">
+            ➕ ثبت اولین تراکنش
+          </button>
+        </div>
+      `;
       return;
     }
 
-    document.getElementById('recentTransactionsList').innerHTML = filtered.map(t => `
-      <div class="clean-tx-card">
-        <div class="tx-right-group">
-          <div class="tx-pastel-icon" style="background:${t.bg || '#E0F2FE'}">${t.icon || '💳'}</div>
-          <div class="tx-info">
-            <h4>${t.title}</h4>
-            <p>${t.bank} • ${t.date}</p>
+    mount.innerHTML = filtered.map(t => {
+      const color = t.pillar === 'income' ? '#059669' : t.pillar === 'saving' ? '#7C3AED' : '#E11D48';
+      return `
+        <div class="tx-row-card">
+          <div class="tx-right">
+            <div class="tx-ico-box" style="background:${t.bg || '#E0F2FE'}">${t.icon || '💳'}</div>
+            <div class="tx-meta">
+              <h4>${t.title}</h4>
+              <p>${t.category} • ${t.bank}</p>
+            </div>
+          </div>
+          <div class="tx-left">
+            <div class="tx-price-col">
+              <span class="val" style="color:${color};">${fmt(t.amount)} تومان</span>
+              <span style="font-size:10px; color:var(--text-sub);">${t.date}</span>
+            </div>
+            <button class="trash-del-btn" title="حذف این تراکنش" onclick="deleteTransaction(${t.id})">🗑️</button>
           </div>
         </div>
-        <div class="tx-left-group">
-          <span class="price">${fmt(t.amount)} تومان</span>
-          <span class="status-chip ${t.pillar === 'income' ? 'green' : t.status === 'تراکنش پیامکی' ? 'amber' : 'green'}">${t.status}</span>
-        </div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
   }
 
-  function setDashFilter(f) { activeFilter = f; renderDashboardList(); }
+  function setDashFilter(f) { activeFilter = f; renderDashboardTransactions(); }
+
+  function deleteTransaction(id) {
+    transactions = transactions.filter(t => t.id !== id);
+    saveState();
+    renderAll();
+  }
 
   function renderThreeLevelTree(totals) {
     const pillars = [
@@ -872,25 +1311,25 @@
       const sortedCats = Object.values(catMap).sort((a, b) => b.total - a.total);
 
       html += `
-        <div class="tree-pillar-box ${isOpen ? 'open' : ''}">
-          <div class="tree-pillar-head" onclick="toggleTreePillar('${p.key}')">
+        <div class="pillar-box ${isOpen ? 'open' : ''}">
+          <div class="pillar-head" onclick="toggleTreePillar('${p.key}')">
             <div style="display:flex; align-items:center; gap:10px;">
-              <span style="font-size:18px;">${p.icon}</span>
+              <span style="font-size:19px;">${p.icon}</span>
               <div>
                 <strong style="font-size:14px;">${p.title}</strong>
-                <div style="font-size:10.5px; color:var(--text-sub);">${toFa(sortedCats.length)} دسته‌بندی فعال</div>
+                <div style="font-size:10.5px; color:var(--text-sub);">${toFa(sortedCats.length)} دسته دارای تراکنش</div>
               </div>
             </div>
             <div style="text-align:left;">
               <strong style="font-size:15px; color:${p.color};">${fmt(pTotal)} تومان</strong>
-              <div style="font-size:10px; color:var(--text-sub);">${isOpen ? 'بستن ▲' : 'باز کردن دسته‌ها ▼'}</div>
+              <div style="font-size:10px; color:var(--text-sub);">${isOpen ? 'بستن ▲' : 'باز کردن ▼'}</div>
             </div>
           </div>
-          <div class="tree-pillar-body">
+          <div class="pillar-body">
       `;
 
       if (sortedCats.length === 0) {
-        html += `<div style="font-size:11.5px; color:var(--text-sub); text-align:center; padding:8px;">موردی ثبت نشده است.</div>`;
+        html += `<div style="font-size:11.5px; color:var(--text-sub); text-align:center; padding:10px;">هنوز تراکنشی در این بخش ثبت نشده است.</div>`;
       } else {
         sortedCats.forEach((c, idx) => {
           const pct = pTotal > 0 ? Math.round((c.total / pTotal) * 100) : 0;
@@ -898,9 +1337,9 @@
           const cOpen = !!openTreeCats[cKey];
 
           html += `
-            <div class="sorted-cat-card ${cOpen ? 'open' : ''}">
-              <div class="sorted-cat-head" onclick="toggleTreeCat('${cKey}')">
-                <div class="sorted-cat-bar" style="width:${pct}%; background:${p.color};"></div>
+            <div class="cat-rank-box ${cOpen ? 'open' : ''}">
+              <div class="cat-rank-head" onclick="toggleTreeCat('${cKey}')">
+                <div class="cat-rank-fill" style="width:${pct}%; background:${p.color};"></div>
                 <div style="display:flex; justify-content:space-between; align-items:center; position:relative; z-index:1;">
                   <span style="font-size:12.5px; font-weight:900;">رتبه ${toFa(idx + 1)}: ${c.name}</span>
                   <span style="font-size:13px; font-weight:900;">${fmt(c.total)} تومان (${toFa(pct)}٪)</span>
@@ -909,11 +1348,17 @@
                   شامل ${toFa(c.items.length)} تراکنش • ${cOpen ? 'بستن ریزتراکنش‌ها ▲' : 'مشاهده ریزتراکنش‌ها ▼'}
                 </div>
               </div>
-              <div class="sorted-cat-micro">
+              <div class="cat-micro-items">
                 ${c.items.map(item => `
-                  <div style="display:flex; justify-content:space-between; padding:6px 4px; border-bottom:1px solid var(--border-soft); font-size:11.5px;">
-                    <span>• <strong>${item.title}</strong> (${item.bank})</span>
-                    <strong style="color:${p.color};">${fmt(item.amount)} تومان</strong>
+                  <div style="display:flex; justify-content:space-between; align-items:center; padding:7px 4px; border-bottom:1px solid var(--border-soft); font-size:11.5px;">
+                    <div>
+                      <strong>${item.title}</strong>
+                      <div style="font-size:10px; color:var(--text-sub);">${item.bank} • ${item.date}</div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <strong style="color:${p.color};">${fmt(item.amount)} تومان</strong>
+                      <button class="trash-del-btn" style="width:28px; height:28px; font-size:12px;" title="حذف تراکنش" onclick="deleteTransaction(${item.id})">🗑️</button>
+                    </div>
                   </div>
                 `).join('')}
               </div>
@@ -945,28 +1390,47 @@
       bannerList.innerHTML = activeNotifs.map(i => `
         <div class="notif-banner-item ${i.daysLeft <= 1 ? 'urgent-1day' : ''}" id="top-notif-${i.id}">
           <div style="font-size:11px;">
-            <strong>${i.daysLeft <= 1 ? '🔒' : '🔔'} ${i.title}</strong>
-            <div style="font-size:10px; opacity:0.85;">${i.subtitle}</div>
+            <strong>${i.daysLeft <= 1 ? '🔒 موعد فردا (قفل):' : '🔔 یادآور قسط:'} ${i.title}</strong>
+            <div style="font-size:10px; opacity:0.9;">${i.subtitle}</div>
           </div>
           <div style="display:flex; gap:5px; flex-shrink:0;">
-            <button class="pill-action-btn pill-pay" style="padding:5px 10px; font-size:10px;" onclick="payInstallment(${i.id})">پرداخت کردم</button>
-            <button class="pill-action-btn pill-del" style="padding:5px 10px; font-size:10px;" onclick="tryDeleteInstallmentNotif(${i.id})">حذف اعلان</button>
+            <button class="pill-btn pay" style="padding:5px 10px; font-size:10px;" onclick="payInstallment(${i.id})">پرداخت کردم</button>
+            <button class="pill-btn del" style="padding:5px 10px; font-size:10px;" onclick="tryDismissInstallmentNotif(${i.id})">بستن اعلان</button>
           </div>
         </div>
       `).join('');
     }
 
-    document.getElementById('installmentCardsMount').innerHTML = installments.map(i => `
-      <div class="inst-pill-card ${!i.paid && i.daysLeft <= 1 ? 'locked-border' : ''}" id="inst-card-${i.id}">
-        <h3>${i.title}</h3>
-        <p>${i.paid ? '✅ پرداخت این ماه ثبت شد و اعلان از لیست حذف گردید' : i.subtitle}</p>
+    const mount = document.getElementById('installmentCardsMount');
+    if (installments.length === 0) {
+      mount.innerHTML = `
+        <div class="empty-alive-box" style="padding:20px;">
+          <p style="font-size:12px; font-weight:800; color:var(--text-sub);">
+            هیچ قسطی ثبت نشده است. با دکمه «+ ثبت قسط جدید» در بالا، اقساط خود را اضافه کنید تا از یک هفته قبل یادآوری کند و ۱ روز مانده به سررسید اعلانش قفل شود.
+          </p>
+        </div>
+      `;
+      return;
+    }
+
+    mount.innerHTML = installments.map(i => `
+      <div class="inst-card ${!i.paid && i.daysLeft <= 1 ? 'urgent' : ''}" id="inst-card-${i.id}">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <div>
+            <h3 style="font-size:14.5px; font-weight:900;">${i.title}</h3>
+            <p style="font-size:11px; color:var(--text-sub); margin-top:2px;">
+              ${i.paid ? '✅ پرداخت این ماه ثبت شد و اعلان پاک گردید' : i.subtitle}
+            </p>
+          </div>
+          <button class="trash-del-btn" title="حذف کامل این قسط" onclick="deleteInstallmentCompletely(${i.id})">🗑️</button>
+        </div>
         ${
           i.paid
-            ? `<span class="status-chip green">تسویه شده در این ماه</span>`
+            ? `<div style="margin-top:10px; font-size:11px; font-weight:800; color:#059669;">✓ تسویه شده در این ماه</div>`
             : `
-              <div class="inst-dual-buttons">
-                <button class="pill-action-btn pill-pay" onclick="payInstallment(${i.id})">پرداخت کردم</button>
-                <button class="pill-action-btn pill-del" onclick="tryDeleteInstallmentNotif(${i.id})">حذف اعلان</button>
+              <div class="inst-btn-row">
+                <button class="pill-btn pay" onclick="payInstallment(${i.id})">✅ پرداخت کردم</button>
+                <button class="pill-btn del" onclick="tryDismissInstallmentNotif(${i.id})">بستن اعلان</button>
               </div>
             `
         }
@@ -983,21 +1447,20 @@
     transactions.push({
       id: Date.now(),
       pillar: 'expense',
-      category: '📅 پرداخت شارژ و اقساط ماهانه',
-      title: inst.title,
+      category: '📅 اقساط و بدهی ماهانه',
+      title: `پرداخت قسط: ${inst.title}`,
       amount: inst.amount,
       bank: inst.bank,
-      date: 'ثبت اقساط',
-      status: 'پرداخت شده',
+      date: new Date().toLocaleDateString('fa-IR'),
       icon: '📅',
       bg: '#D1FAE5'
     });
 
-    persistState();
+    saveState();
     renderAll();
   }
 
-  function tryDeleteInstallmentNotif(id) {
+  function tryDismissInstallmentNotif(id) {
     const inst = installments.find(x => x.id === id);
     if (!inst) return;
     if (inst.daysLeft <= 1) {
@@ -1012,7 +1475,16 @@
       return;
     }
     inst.dismissed = true;
-    persistState();
+    saveState();
+    renderAll();
+  }
+
+  function deleteInstallmentCompletely(id) {
+    if (window.AndroidBridge && window.AndroidBridge.cancelInstallmentNotification) {
+      window.AndroidBridge.cancelInstallmentNotification(id);
+    }
+    installments = installments.filter(x => x.id !== id);
+    saveState();
     renderAll();
   }
 
@@ -1024,7 +1496,7 @@
   function saveNewInstallment() {
     const title = document.getElementById('newInstTitle').value.trim();
     const amount = parseInt(document.getElementById('newInstAmount').value, 10);
-    const bank = document.getElementById('newInstBank').value.trim() || 'بانک عامل';
+    const bank = document.getElementById('newInstBank').value.trim() || 'بانک';
     const daysLeft = parseInt(document.getElementById('newInstDaysLeft').value, 10);
     if (!title || !amount) return alert('لطفاً عنوان و مبلغ قسط را وارد کنید.');
 
@@ -1042,7 +1514,7 @@
     document.getElementById('newInstTitle').value = '';
     document.getElementById('newInstAmount').value = '';
     document.getElementById('addInstallmentBox').style.display = 'none';
-    persistState();
+    saveState();
     renderAll();
   }
 
@@ -1056,13 +1528,13 @@
     const isInc = /(واریز|سود|بستانکار)/.test(clean) && !/(برداشت|خرید|کسر)/.test(clean);
     const pillar = isInc ? 'income' : 'expense';
 
-    const matches = [...clean.matchAll(/(\d{1,3}(?:,\d{3})+|\d{5,})/g)].map(m => parseInt(m[0].replace(/,/g, ''), 10));
-    const rial = matches.length > 0 ? matches[0] : 5000000;
+    const matches = [...clean.matchAll(/(\d{1,3}(?:,\d{3})+|\d{4,})/g)].map(m => parseInt(m[0].replace(/,/g, ''), 10));
+    const rial = matches.length > 0 ? matches[0] : 1000000;
     const toman = Math.round(rial / 10);
     const saveAmt = isInc ? Math.round((toman * savingRatePct) / 100) : (50000 - (toman % 50000));
 
-    let bankName = 'بانک عضو شتاب';
-    const bankList = ['بانک ملی', 'بانک ملت', 'بانک صادرات', 'مهر ایران', 'بلوبانک', 'بانک سپه', 'بانک تجارت', 'بانک مسکن', 'پاسارگاد', 'رسالت'];
+    let bankName = 'تراکنش بانکی';
+    const bankList = ['بانک ملی', 'مهر ایران', 'بانک ملت', 'بانک صادرات', 'بلوبانک', 'بانک سپه', 'بانک تجارت', 'بانک مسکن', 'پاسارگاد', 'رسالت'];
     for (const b of bankList) { if (clean.includes(b)) { bankName = b; break; } }
 
     pendingSmsDraft = {
@@ -1073,8 +1545,11 @@
 
     document.getElementById('modalBankTitle').textContent = pendingSmsDraft.bank;
     document.getElementById('modalAmountVal').textContent = fmt(toman) + ' تومان';
-    document.getElementById('modalTypeBadge').textContent = isInc ? 'واریز / درآمد' : 'برداشت / هزینه';
-    document.getElementById('modalTypeBadge').className = 'status-chip ' + (isInc ? 'green' : 'rose');
+    const badge = document.getElementById('modalTypeBadge');
+    badge.textContent = isInc ? '🟢 واریز / درآمد' : '🔴 برداشت / هزینه';
+    badge.style.background = isInc ? '#D1FAE5' : '#FFE4E6';
+    badge.style.color = isInc ? '#065F46' : '#9F1239';
+
     document.getElementById('modalAutoSaveText').textContent = isInc
       ? `کسر خودکار ${toFa(savingRatePct)}٪ پس‌انداز تعهدی (${fmt(saveAmt)} تومان)`
       : `گرد کردن خرده‌پول به قلک پس‌انداز (${fmt(saveAmt)} تومان)`;
@@ -1087,7 +1562,7 @@
     if (!pendingSmsDraft) return;
     const list = CATEGORIES[pendingSmsDraft.pillar] || [];
     document.getElementById('modalCategoryPills').innerHTML = list.map(c => `
-      <button class="filter-pill ${pendingSmsDraft.category === c ? 'active' : ''}" onclick="pendingSmsDraft.category='${c}'; renderModalCatPills();">${c}</button>
+      <button class="chip-btn ${pendingSmsDraft.category === c ? 'active' : ''}" onclick="pendingSmsDraft.category='${c}'; renderModalCatPills();">${c}</button>
     `).join('');
   }
 
@@ -1097,7 +1572,7 @@
     const formatted = '🏷️ ' + name.trim();
     CATEGORIES[pendingSmsDraft.pillar].unshift(formatted);
     pendingSmsDraft.category = formatted;
-    persistState();
+    saveState();
     renderModalCatPills();
     renderSettingsCategories();
   }
@@ -1105,6 +1580,7 @@
   function confirmSmsModal() {
     if (!pendingSmsDraft) return;
     const note = document.getElementById('modalNoteInput').value.trim() || pendingSmsDraft.category;
+    const today = new Date().toLocaleDateString('fa-IR');
 
     transactions.push({
       id: Date.now(),
@@ -1113,8 +1589,7 @@
       title: note,
       amount: pendingSmsDraft.amount,
       bank: pendingSmsDraft.bank,
-      date: 'ثبت پیامکی',
-      status: 'تراکنش پیامکی',
+      date: today,
       icon: pendingSmsDraft.pillar === 'income' ? '🟢' : '🧾',
       bg: pendingSmsDraft.pillar === 'income' ? '#D1FAE5' : '#FEF3C7'
     });
@@ -1124,11 +1599,10 @@
         id: Date.now() + 1,
         pillar: 'saving',
         category: '🔐 پس‌انداز تعهدی ماهانه',
-        title: `پس‌انداز خودکار از ${note}`,
+        title: `پس‌انداز خودکار از: ${note}`,
         amount: pendingSmsDraft.saveAmt,
         bank: pendingSmsDraft.bank,
-        date: 'ثبت خودکار',
-        status: 'قفل شده',
+        date: today,
         icon: '🔐',
         bg: '#EDE9FE'
       });
@@ -1136,7 +1610,8 @@
 
     document.getElementById('modalNoteInput').value = '';
     closeSmsModal();
-    persistState();
+    saveState();
+    switchScreen('dashboard', document.getElementById('nav-dash'));
     renderAll();
   }
 
@@ -1144,22 +1619,40 @@
 
   function triggerCustomSmsFromInput() {
     const txt = document.getElementById('customSmsTextarea').value.trim();
-    if (txt) openSmsModalFromText(txt);
+    if (!txt) return alert('لطفاً متن پیامک را در کادر بنویسید.');
+    openSmsModalFromText(txt);
   }
 
   function setManualPillar(p) {
     currentManualPillar = p;
     ['expense', 'income', 'saving', 'transfer'].forEach(k => {
-      document.getElementById('mBtn-' + k).className = 'filter-pill' + (k === p ? ' active' : '');
+      document.getElementById('mBtn-' + k).className = 'chip-btn' + (k === p ? ' active' : '');
     });
     document.getElementById('mCategorySelect').innerHTML = (CATEGORIES[p] || []).map(c => `<option value="${c}">${c}</option>`).join('');
+  }
+
+  function appendZeros(z) {
+    const inp = document.getElementById('mAmountInput');
+    if (!inp.value) inp.value = '1';
+    inp.value = inp.value + z;
+  }
+
+  function promptNewCategoryDirect() {
+    const name = prompt('نام دسته‌بندی جدید را بنویسید:');
+    if (!name) return;
+    const formatted = '🏷️ ' + name.trim();
+    CATEGORIES[currentManualPillar].unshift(formatted);
+    saveState();
+    setManualPillar(currentManualPillar);
+    document.getElementById('mCategorySelect').value = formatted;
   }
 
   function submitManualTx() {
     const amt = parseInt(document.getElementById('mAmountInput').value, 10);
     const cat = document.getElementById('mCategorySelect').value;
     const title = document.getElementById('mTitleInput').value.trim() || cat;
-    if (!amt) return alert('لطفاً مبلغ را وارد کنید.');
+    const bank = document.getElementById('mBankInput').value.trim() || 'ثبت دستی';
+    if (!amt || amt <= 0) return alert('لطفاً مبلغ معتبر به تومان وارد کنید.');
 
     transactions.push({
       id: Date.now(),
@@ -1167,16 +1660,15 @@
       category: cat,
       title,
       amount: amt,
-      bank: 'ثبت دستی',
-      date: 'ثبت دستی',
-      status: 'پرداخت شده',
-      icon: '✍️',
-      bg: '#E0F2FE'
+      bank,
+      date: new Date().toLocaleDateString('fa-IR'),
+      icon: currentManualPillar === 'income' ? '🟢' : currentManualPillar === 'saving' ? '🔐' : '✍️',
+      bg: currentManualPillar === 'income' ? '#D1FAE5' : '#E0F2FE'
     });
 
     document.getElementById('mAmountInput').value = '';
     document.getElementById('mTitleInput').value = '';
-    persistState();
+    saveState();
     switchScreen('dashboard', document.getElementById('nav-dash'));
     renderAll();
   }
@@ -1191,9 +1683,9 @@
     const p = document.getElementById('setCatPillar').value;
     const list = CATEGORIES[p] || [];
     document.getElementById('settingsCatList').innerHTML = list.map((c, idx) => `
-      <span class="filter-pill" style="display:inline-flex; align-items:center; gap:6px;">
+      <span class="chip-btn" style="display:inline-flex; align-items:center; gap:7px; padding:5px 11px;">
         <span>${c}</span>
-        <b style="color:#EF4444; cursor:pointer;" onclick="removeCategory('${p}', ${idx})">×</b>
+        <span style="color:#E11D48; cursor:pointer; font-size:13px;" title="حذف دسته" onclick="removeCategory('${p}', ${idx})">🗑️</span>
       </span>
     `).join('');
   }
@@ -1202,37 +1694,64 @@
     const p = document.getElementById('setCatPillar').value;
     const emo = document.getElementById('setCatEmoji').value;
     const name = document.getElementById('setNewCatName').value.trim();
-    if (!name) return;
+    if (!name) return alert('نام دسته‌بندی را بنویسید.');
     CATEGORIES[p].unshift(`${emo} ${name}`);
     document.getElementById('setNewCatName').value = '';
-    persistState();
+    saveState();
     setManualPillar(currentManualPillar);
     renderSettingsCategories();
   }
 
   function removeCategory(p, idx) {
-    if (CATEGORIES[p].length <= 1) return;
+    if (CATEGORIES[p].length <= 1) return alert('حداقل یک دسته‌بندی باید باقی بماند.');
     CATEGORIES[p].splice(idx, 1);
-    persistState();
+    saveState();
     setManualPillar(currentManualPillar);
     renderSettingsCategories();
   }
 
-  function clearAllDemoData() {
-    if (!confirm('آیا مطمئن هستید که می‌خواهید تراکنش‌ها و اقساط نمونه را پاک کنید و از صفر شروع کنید؟')) return;
-    transactions = [];
-    installments = [];
-    persistState();
-    renderAll();
-    alert('تمام داده‌های نمونه پاک شدند. اکنون می‌توانید اطلاعات واقعی خود را ثبت کنید.');
+  function addSenderNumber() {
+    const val = document.getElementById('newSenderInput').value.trim();
+    if (!val) return;
+    senderNumbers.push(val);
+    document.getElementById('newSenderInput').value = '';
+    saveState();
+    renderSendersList();
   }
 
-  // Restore saved skin
-  const savedSkin = localStorage.getItem('taraz_prod_skin') || 'aqua-pastel';
+  function removeSenderNumber(idx) {
+    senderNumbers.splice(idx, 1);
+    saveState();
+    renderSendersList();
+  }
+
+  function renderSendersList() {
+    const box = document.getElementById('senderNumbersList');
+    if (senderNumbers.length === 0) {
+      box.innerHTML = `<span style="font-size:10.5px; color:var(--text-sub);">همه سرشماره‌های بانکی کشور به صورت خودکار فعال هستند.</span>`;
+      return;
+    }
+    box.innerHTML = senderNumbers.map((s, idx) => `
+      <span class="chip-btn" style="display:inline-flex; align-items:center; gap:6px;">
+        <span>${s}</span>
+        <b style="color:#E11D48; cursor:pointer;" onclick="removeSenderNumber(${idx})">🗑️</b>
+      </span>
+    `).join('');
+  }
+
+  function wipeAllAppData() {
+    if (!confirm('آیا مطمئن هستید که می‌خواهید تمام تراکنش‌ها و اقساط را حذف کنید؟')) return;
+    transactions = [];
+    installments = [];
+    saveState();
+    renderAll();
+  }
+
+  // Init
+  const savedSkin = localStorage.getItem('taraz_v4_skin') || 'vivid-aurora';
   setSkin(savedSkin, document.getElementById('skinBtn-' + savedSkin));
   setManualPillar('expense');
   renderAll();
-  syncAndroidNativeNotifications();
 </script>
 </body>
 </html>
